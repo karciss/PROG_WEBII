@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+:root {
+    --color-primaria: #322a6e;
+    --color-secundaria: #e2c635;
+    --color-terciaria: #b6aed8;
+    --color-hover: #dab708;
+
+    --fuente-montserrat: 'Montserrat', sans-serif;
+}
+.producto {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    background-color: #f8f7fd;
+    flex-direction: column;
+}
+.producto__card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.producto__titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 1000;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #333;
+    align-self: center;
+    letter-spacing: 15px;
+    
+}
+.card--prod1{
+    background-color:var(--color-terciaria) ;
+    height: 300px;
+    margin-top: 15px;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 0px 15px 0px var(--color-primaria);
+}
+.card__titulo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #333;
+    align-self: center;
+}
+.producto_imagen{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.card__precio {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+
+
+.contacto {
+    background-color: #f8f7fd; /* Color de fondo suave */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 550px;
+    margin-left: 30%;
+}
+
+.contacto__titulo {
+    font-size: 3rem;
+    color: var(--color-primaria);
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.contacto__contenido {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.contacto__descripcion {
+    font-size: 1.2rem;
+    color: var(--color-terciaria);
+    margin-bottom: 20px;
+}
+
+.contacto img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px var(--color-primaria);
+    margin-top: 20px;
+}
+
+#img_contacto:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+
+}

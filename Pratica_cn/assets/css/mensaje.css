@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+:root {
+    --color-primaria: #322a6e;
+    --color-secundaria: #e2c635;
+    --color-terciaria: #b6aed8;
+    --color-hover: #dab708;
+
+    --fuente-montserrat: 'Montserrat', sans-serif;
+} 
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif;
+    background-color: #322a6e;
+}
+.mensaje{
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    background-color: #016371;
+    height: 300px;
+}
+.mensaje__lista{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.mensaje__item{
+    max-width: 300px;
+    height: 300px !important;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2.5rem 0 2rem 5rem;
+    background-position: top 1rem left 1rem;
+    border-radius: 10px ;
+    margin-bottom: 2rem;
+    border: 5px solid #d0f8fe;
+    box-shadow: #d0f8fe 0px 0px 30px 0px;
+}
+.mensaje__logo{
+    background-image: url('../img/prod1.jpg');
+    height: 100%;
+    width: 100%;
+    
+}
+.mensaje__item__titulo{
+    color: #d0f8fe;
+    text-shadow: #016371 0px 0px 10px;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+
+}
+.mensaje__item__texto{
+    line-height: normal;
+    font-family: 'Montserrat',sans-serif;
+    color: #d0f8fe;;
+}
+#pan{
+    border: #d0f8fe 1px solid;
+    border-radius: 10px;
+}
+
+
+
+.nosotros {
+    padding: 8rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+    background-color: var(--color-primaria);
+    width: 100%;
+}
+
+.nosotros__titulo {
+    font-size: 3rem;
+    color: wheat;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nosotros__texto {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: wheat;
+    margin-bottom: 2rem;
+}
+
+.nosotros__imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 35px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: perspective(1000px) rotateY(-5deg);
+}
+
+.nosotros__imagen:hover {
+    transform: scale(1.05) perspective(1000px) rotateY(-5deg);
+}
+
+

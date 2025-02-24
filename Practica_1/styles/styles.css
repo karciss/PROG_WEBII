@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+
+:root {
+    --color-primaria: #E1EACD;
+    --color-secundaria: #8D77AB;
+    --color-terciaria: #BAD8B6;
+    --color-hover: #BAD8B6;
+
+    --fuente-krona: 'Krona One', sans-serif;
+    --fuente-montserrat: 'Montserrat', sans-serif;
+}
+*{
+    padding: 0%;
+    margin: 0%;
+    text-decoration: none;
+}
+body{
+    box-sizing: border-box;
+    background-color: var(--color-primaria);
+    color: var(--color-secundaria);
+}
+.header{
+    padding: 2% 0% 0% 15%;
+}
+.header__menu{
+    display: flex;
+    gap: 80px;
+}
+.header__menu__link{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    color: #746091;
+    font-weight: 600;
+    text-decoration: none;
+}
+.presentacion{
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.presentacion__contenido{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.presentacion__contenido__titulo{
+    font-size: 2rem;
+    font-family: var(--fuente-krona);
+}
+.titulo-destaque{
+    color: var(--color-terciaria);
+}
+.presentacion___contenido___texto{
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+} 
+.presentacion__enlaces{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1rem;
+    font-weight: 400;
+}
+.presentacion__enlaces__link{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border:2px solid var(--color-terciaria);
+    width: 50%;
+    text-decoration: none;
+    border-radius: 15px;
+    text-align: center;
+    color: var(--color-secundaria);
+    font-size: 1.5rem;
+    font-family: var(--fuente-krona);
+    font-weight: 600;
+    padding: 5px;
+}
+
+.presentacion__enlaces__link:hover{
+    background-color: var(--color-hover);
+}
+.footer{
+    color: var(--color-primaria);
+    background-color: var(--color-terciaria);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
