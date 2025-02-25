@@ -1,44 +1,81 @@
+:root {
+    --color-primaria: #5c8d7b;  
+    --color-secundaria: #e7f0d5; 
+    --color-terciaria: #c1e1a6;  
+    --color-hover: #73a37d;      
+
+    --fuente-montserrat: 'Montserrat', sans-serif;
+}
 body {
-	background-color: #F2F5F7;
+	background-color: var(--color-primaria);
 	font-family: 'Open Sans',Arial,sans-serif;
+	color: var(--color-secundaria);
 }
 
 .container {
 	width: 94%;
 	margin: 0 auto;
+	
 }
 
 .headerPrincipal {
-	background-color: #FFF;
-	padding: 20px 0;
+	background-color: var(--color-primaria);
+	padding: 35px 0;
 }
 
 .headerPrincipal-titulo {
-	font-weight: bold;
-	font-size: 2em;
-	margin-bottom: 20px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    font-size: 2.5em; 
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .headerPrincipal-titulo a {
-	text-decoration: none;
-	color: inherit;
+    text-decoration: none;
+    color: var(--color-terciaria);
+}
+
+.headerPrincipal-nav {
+    display: flex;
+    justify-content: center; 
+    gap: 15px; 
+	margin-top: 40px;
 }
 
 .headerPrincipal-nav-link {
-	padding: 10px;
-	margin-bottom: 10px;
-	color: #9799A6;
-	background-color: #FFF;
-	text-decoration: none;
-	transition: .5s;
-	display: block;
+    padding: 12px 20px;
+    color: #fff;
+    background-color: var(--color-hover);
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    border-radius: 8px; 
+    font-weight: bold;
+    font-size: 1.1em;
+    border: 2px solid var(--color-terciaria); 
+}
 
-	border-bottom: 1px solid #9799A6;
+
+.headerPrincipal-nav-link:hover {
+    background-color: var(--color-secundaria);
+    color: var(--color-primaria);
+    transform: scale(1.05); 
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+.headerPrincipal-nav {
+	display: flex;
+	justify-content: right;
+}
+
+.headerPrincipal-nav-link {
+	margin: 0 10px;
+	
 }
 
 .contenidoPrincipal {
 	margin-top: 20px;
 	margin-bottom: 20px;
+	color: var(--color-secundaria);
 }
 
 .subtitulo {
@@ -46,32 +83,49 @@ body {
 	font-size: 32px;
 	margin-bottom: 10px;
 	text-align: center;
+	color: var(--color-primaria);
+	background-color: var(--color-secundaria);
+	padding: 10px;
+
+}
+
+.contenidoPrincipal-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 70px; 
+    justify-content: center;
+    padding: 20px 0;
 }
 
 .contenidoPrincipal-productos-link {
-	height: 100px;
-	background-color: #FFF;
-	text-align: center;
-	margin: 1%;
-	transition: .3s;
-	box-shadow: 2px 2px 2px #CCC;
-	position: relative;
+    height: 150px;
+    background-color: var(--color-secundaria);
+    text-align: center;
+    transition: .3s;
+    position: relative;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .contenidoPrincipal-productos-link a {
 	text-decoration: none;
-	color: #000;
-	font-weight: bold;
-	display: block;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
+    color: var(--color-primaria);
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    
 }
 
 .contenidoPrincipal-productos-link:hover {
-	box-shadow: 4px 4px 4px #CCC;
+	box-shadow: 6px 6px 6px var(--color-hover);
+	transform: scale(1.05);
 }
 
 .contenidoPrincipal-productos-link a:before {
@@ -94,48 +148,63 @@ body {
 
 
 .rodapePrincipal {
-	background-color: #23292d;
-	padding-top: 20px;
+	background-color: var(--color-hover);
+	padding: 40px 5%;
 }
 
 .rodapePrincipal .subtitulo {
-	color: #FFF;
+    margin-bottom: 15px;
 }
 
 .rodapePrincipal-navMap-link {
 	text-decoration: none;
-	color: #FFF;
+	color: var(--color-secundaria);
 	margin-top: 10px;
+	margin-left: 15px;
 }
 
-.rodapePrincipal-navMap-link {
-	font-size: .9em;
+.rodapePrincipal-navMap-list {
+	display: block;
+    font-size: 1.1em;
+    color: var(--color-secundaria);
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s;
 }
 
 .navmap-list-title {
 	font-weight: 700;
-	font-size: 1.3em;
 	margin: .9em 0;
 	padding-left: .3em;
 	padding-top: .2em;
 	padding-bottom: .2em;
+	margin-bottom: 10px;
 }
-
+.rodapePrincipal-navMap-link:hover {
+    color: var(--color-terciaria);
+}
 .navmap-list-title + .rodapePrincipal-navMap-link {
 	margin-top: 0;
 }
 
-.navmap-list-title-zara { color: #ec5aaf; border-left: 4px solid #EC6E5A; }
-.navmap-list-title-adidas { color: #9785bf; border-left: 4px solid #AD85BF; }
-.navmap-list-title-nike { color: #775ef3; border-left: 4px solid #5EC6F3; }
-.navmap-list-title-polo { color: #6725d2; border-left: 4px solid #25D285; }
+.navmap-list-title-zara { color: #5ac3ec; border-left: 4px solid #5ac3ec; padding-left: 5px; }
+.navmap-list-title-adidas { color: #725da0; border-left: 4px solid #725da0; padding-left: 5px; }
+.navmap-list-title-nike { color: #5e68f3; border-left: 4px solid #5e68f3; padding-left: 5px; }
+.navmap-list-title-polo { color: #6725d2; border-left: 4px solid #6725d2; padding-left: 5px; }
 
 .rodapePrincipal-patrocinadores {
-	margin-top: 30px;
-	background: #F2F5F7;
-	padding: 20px 0;
+	background:  rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+    margin-top: 30px;
+    text-align: center;
 }
-
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
 .rodapePrincipal-contatoForm {
 	margin-top: 20px;
 	text-align: center;
@@ -144,26 +213,35 @@ body {
 .rodapePrincipal-contatoForm label[for=email-contato] {
 	font-weight: bold;
 	font-size: 14px;
-	color: #000;
+	color: var(--color-primaria);
 	margin-bottom: 5px;
 	display: block;
 }
 
 .rodapePrincipal-contatoForm-emailInput {
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
 	padding: 10px;
+    border: 1px solid var(--color-primaria);
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
 }
 
 .rodapePrincipal-contatoForm-submit {
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	background-color: #4DBA7A;
-	color: #FFF;
-	cursor: pointer;
+	background-color: var(--color-hover);
+    color: var(--color-secundaria);
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
 	
 }
 
+.rodapePrincipal-contatoForm-submit:hover {
+    background-color: var(--color-terciaria);
+    transform: scale(1.05);
+}
 .rodapePrincipal-contatoForm-submit,
 .rodapePrincipal-contatoForm-emailInput {
 	outline: 0;
@@ -172,44 +250,81 @@ body {
 	font-size: 16px;
 }
 
-.videoSobre {
-	background-color: #343c44;
-	padding: 25px 0;
+.rodapePrincipal-contatoForm-legend {
+	font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
 
+
+
+
+.videoSobre {
+    background-color: var(--color-primaria);
+    padding: 50px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.containerNose{
+    display: flex;
+    align-items: center; 
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    max-width: 1100px;
+    width: 100%;
 }
 
 .videoSobre-video {
-	max-width: 100%;
-}
-
-.videoSobre .container {
-	color: #FFF;
-}
-
-.videoSobre-sobre-title {
-	font-size: 1.2em;
-	font-weight: bolder;
+    width: 50%; 
+    max-width: 500px; 
+    height: 250px;
+    border-radius: 15px;
 }
 
 .videoSobre-sobre {
-	font-size: 1.3em;
-	line-height: 2;
+    width: 45%;
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--color-secundaria);
 }
+
+
+.videoSobre-sobre-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+	padding-left: 15px;
+}
+
+.videoSobre-sobre-list {
+    font-size: 1.2em;
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
 
 .videoSobre-button {
-	border-radius: 8px;
-	background-color: #ec6e5a;
-	display: block;
-	color: #FFF;
-	border: none;
-	height: 50px;
-	font-size: .8em;
-	outline: none;
+    border-radius: 8px;
+    background-color: var(--color-hover);
+    color: var(--color-secundaria);
+    border: none;
+    padding: 14px 24px;
+	margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.rodapePrincipal-contatoForm-legend {
-	margin-bottom: 10px;
+.videoSobre-button:hover {
+    background-color: var(--color-terciaria);
+    color: var(--color-primaria);
+    transform: scale(1.05);
 }
+
 
 @media(min-width: 769px) {
 
