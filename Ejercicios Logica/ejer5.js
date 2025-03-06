@@ -1,8 +1,5 @@
 function binario(numero) {
-    if (numero === 0) {
-        return '0';
-    }
-    
+        
     let binario = '';
     while (numero > 0) {
         binario = (numero % 2) + binario;
