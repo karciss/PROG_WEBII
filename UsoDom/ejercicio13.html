@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicip 13 Prevenir accion por defecto</title>
+</head>
+<body>
+    <div id="enlace" href="https://web.whatsapp.com/">Enlace</div>
+    <script>
+        const enlace = document.getElementById('enlace');
+        enlace.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('No se puede acceder al enlace');
+        });
+    </script>
+</html>
