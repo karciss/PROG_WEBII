@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14 stopPropagation</title>
+</head>
+<body>
+    <div id="elementoPadre">Hola
+        <div id="elementoHijo">Elemento Hijo</div>
+
+    </div>
+    <script>
+        const elementoHijo=document.getElementById('elementoHijo');
+        elementoHijo.addEventListener('click', (e)=>{
+            alert('Hijo');
+            e.stopPropagation();
+        });
+        const elementoPadre=document.getElementById('elementoPadre');
+        elementoPadre.addEventListener('click', (e)=>{
+            alert('Padre');
+        });
+    </script>
+</body>
+</html>
