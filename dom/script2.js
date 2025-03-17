@@ -49,4 +49,7 @@
         element.classList.add('completeIcon');
         element.classList.remove('far');
     };
+
+
+    
     })();
