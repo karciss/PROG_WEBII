@@ -38,6 +38,7 @@ const createTask=(evento)=>{
     // task.innerHTML = contenido;
     list.appendChild(task);
     // console.log(contenido);
+    alert("Acabas de crear una tarea");
 }
 
 btn.addEventListener('click', createTask);
