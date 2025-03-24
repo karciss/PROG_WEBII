@@ -7,6 +7,15 @@
 
     --fuente-montserrat: 'Montserrat', sans-serif;
 } 
+[data-theme="light"] {
+    --color-primaria: #AFA2FF;   
+    --color-secundaria: #FFE680; 
+    --color-terciaria: #EAE2FF;  
+    --color-hover: #8678FF;    
+
+    --fuente-montserrat: 'Montserrat', sans-serif;
+}
+
 .pagina{
     display: flex;
     flex-direction: column;

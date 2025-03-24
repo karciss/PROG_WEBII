@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/mensaje.css">
     <link rel="stylesheet" href="assets/css/producto.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/toggle.css">
 </head>
 <body>
     <header class="head">
@@ -23,6 +24,12 @@
                 <li class="head__link"><a href="#">seccion1</a></li>
                 <li class="head__link"><a href="#">seccion2</a></li>
                 <li class="head__link"><a href="#">seccion3</a></li>
+                <li>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </li>
             </ul>
         </nav>
     </header>
@@ -72,7 +79,7 @@
                 <div class="nosotros__contenido">
                     <h2 class="nosotros__titulo"> sobre nosotros</h2>
                     <p class="nosotros__texto">mensaje sobre nosotros</p>
-
+                    
                 </div>
             </div>
             <img class="nosotros__imagen" src="assets/img/perfil1.jpg" alt="img">
@@ -138,6 +145,7 @@
         </nav>
 
     </footer>
-    
+    <script type="module" src="script.js"></script>
+
 </body>
 </html>

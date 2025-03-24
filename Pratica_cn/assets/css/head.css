@@ -7,6 +7,18 @@
 
     --fuente-montserrat: 'Montserrat', sans-serif;
 } 
+
+[data-theme="light"] {
+    --color-primaria: #AFA2FF;   
+    --color-secundaria: #FFE680; 
+    --color-terciaria: #EAE2FF;  
+    --color-hover: #8678FF;     
+
+    --fuente-montserrat: 'Montserrat', sans-serif;
+}
+
+
+
 .head{
     color: var(--color-secundaria);
     width: 100%;
@@ -39,6 +51,5 @@ margin-left: 45px;
     display: inline-block;
     margin-right: 2.5rem;
     margin-bottom: 0.5rem;
-    margin-left: 0.5rem;
     font-weight: bold;
 }
