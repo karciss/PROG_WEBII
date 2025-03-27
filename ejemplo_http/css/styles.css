@@ -1,0 +1,141 @@
+:root {
+    --primary: #d5daf1;
+    --secondary: #3f37c9;
+    --accent: #4895ef;
+    --dark: #1b263b;
+    --light: #f8f9fa;
+    --success: #4cc9f0;
+    --warning: #f72585;
+    --danger: #ef233c;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    font-size: 16px;
+}
+    main {
+    background-image: linear-gradient(
+        109.6deg,
+        rgba(62, 161, 219, 1) 11.2%,
+        rgba(93, 52, 236, 1) 100.2%
+    );
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+  } 
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  h1 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-get {
+    background-color: var(--accent);
+    color: white;
+  }
+  
+  .btn-post {
+    background-color: var(--success);
+    color: white;
+  }
+  
+  .btn-put {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .btn-delete {
+    background-color: var(--danger);
+    color: white;
+  }
+  
+  .results {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    min-height: 200px;
+    overflow-x: auto;
+  }
+  
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  
+  .status-success {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .status-error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+  }
+  
+  @media (max-width: 768px) {
+    .controls {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }

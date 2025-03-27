@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "titulo": "Nuevo Post Creado",
+      "descripcion": "Econtenido ",
+      "fecha": "2025-03-27"
+    },
+    {
+      "id": "1",
+      "titulo": "Nuevo Post Creado",
+      "descripcion": "CONTENIDO",
+      "fecha": "2025-03-27"
+    }
+  ]
+}
