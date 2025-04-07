@@ -20,11 +20,12 @@ const createTask = (evento) => {
     task.classList.add('task')
     input.value = '';
 
-    const contTask = document.createElement('div');     
-    const titleTask = document.createElement('span');
-    titleTask.classList.add('task');
+    // const contTask = document.createElement('div');   //no era necesario  
+    const titleTask = document.createElement('span');   
+    // titleTask.classList.add('task');  //no era necesario
     titleTask.innerText = value;
 
+    // task.innerHTML = value;
     task.appendChild(titleTask);
     list.appendChild(task);
 
@@ -42,7 +43,7 @@ list.addEventListener('click', (evento) => {
 });
 
 
-//tachar ultimo 
+//tachar ultimo  
 const toggleBtn = document.querySelector('[data-toggleBtn]')
 toggleBtn.addEventListener('click', (evento) => {
     evento.preventDefault();
@@ -70,7 +71,8 @@ countBtn.addEventListener('click', (evento) => {
 
 //eliminar con doble click
 list.addEventListener('dblclick', (evento) => {
-    if(evento.target.tagName === 'LI') {
+    if(evento.target.tagName === 'LI') { 
         evento.target.remove()
     }
+    
 });

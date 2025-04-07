@@ -13,11 +13,12 @@ const createTask = (evento) => {
     task.classList.add('task')
     input.value = '';
 
-    const contTask = document.createElement('div');     
+    const contTask = document.createElement('div');     //no era necesario  
     const titleTask = document.createElement('span');
-    titleTask.classList.add('task');
+    titleTask.classList.add('task');    //no era necesario  
     titleTask.innerText = value;
 
+    // task.innerHTML = value;
     task.appendChild(titleTask);
     list.appendChild(task);
 
