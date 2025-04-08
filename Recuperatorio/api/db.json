@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "nombre": "Nuevo Post Creado",
+      "descripcion": "Econtenido ",
+      "fecha": "2025-03-27",
+      "nombreAsignado": "Juan Perez",
+      "valorNumerico":"06"
+    },
+    {
+      "id": "1",
+      "nombre": "Nuevo Post Creado",
+      "descripcion": "CONTENIDO",
+      "fecha": "2025-03-27",
+      "nombreAsignado": "Carlos",
+      "valorNumerico":"07"
+    }
+  ]
+}

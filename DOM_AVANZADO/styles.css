@@ -66,11 +66,11 @@
   .contentContainer {
     width: 80vw;
     display: flex;
-    gap: 20px; /* Espacio entre la tabla y las cards */
+    gap: 20px; 
   }
   
   .tableContainer {
-    flex: 2; /* La tabla ocupa más espacio */
+    flex: 2; 
     border-radius: 25px;
     background-color: #fff;
     padding: 25px;
