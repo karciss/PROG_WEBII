@@ -176,7 +176,38 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
-  
+  .btn-edit {
+    background-color: var(--accent);
+    color: white;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    border-color: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+  }
+  .btn-edit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .btn-delete{
+    background-color: var(--danger);
+    color: white;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    border-color: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+  }
+  .btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
   @media (max-width: 768px) {
     .controls {
       flex-direction: column;
@@ -188,4 +219,5 @@
       max-width: 300px;
     }
   }
+  
 

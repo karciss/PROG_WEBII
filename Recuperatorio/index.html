@@ -1,131 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>CRUD Local Server</title>
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Open+Sans&family=Parisienne&display=swap" rel="stylesheet"
-    />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Open+Sans&family=Parisienne&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
-    <main>
+  <main>
     <div class="container">
-        <header>
-            <h1>CRUD</h1>
-        </header>
+      <header>
+        <h1>CRUD</h1>
+      </header>
 
-        <div class="controls">
-            <button class="btn btn-get" onclick="getData()">Obtener Posts (GET)</button>
-            <button class="btn btn-post" onclick="postData()">Crear Post (POST)</button>
-            <button class="btn btn-put" onclick="putData()">Actualizar Post 1 (PUT)</button>
-            <button class="btn btn-delete" onclick="deleteData()">Eliminar Post 1 (DELETE)</button>
-        </div>
-        
-        <div class="formContainer">
-            <form action="" id="taskForm" data-form>
-              <!-- <input
-                type="text"
-                name="id"
-                placeholder="ID"
-                class="inputForm"
-                autocomplete="off"
-                data-input-prioridad
-                required
-              /> -->
-              <input
-                type="text"
-                name="task"
-                placeholder="Nombre de la tarea"
-                class="inputForm"
-                autocomplete="off"
-                data-input-task
-                required
-              />
-              <input
-                type="date"
-                name="date"
-                placeholder="Fecha"
-                class="inputForm"
-                data-input-fecha
-                required
-              />
-              <input
-                type="text"
-                name="description"
-                placeholder="Descripción"
-                class="inputForm"
-                autocomplete="off"
-                data-input-descripcion
-                required
-              />
-              <input
-                type="text"
-                name="nombre"
-                placeholder="Nombre Asignado"
-                class="inputForm"
-                autocomplete="off"
-                data-input-nombre
-                required
-              />
-              <input
-                type="number"
-                name="numerico"
-                placeholder="Valor Numerico"
-                class="inputForm"
-                autocomplete="off"
-                data-input-numerico
-                required
-              />
-              
-              <button type="submit" class="btnCreate">
-                Agregar <i class="fas fa-plus-circle"></i>
-              </button>
-            </form>
-          </div>
-        <div class="results">
-            <h2>Lista de Tareas</h2>
-          <table id="taskTable">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Fecha</th>
-                <th>Nombre Asignado</th>
-                <th>Valor Numerico</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Las filas se agregarán dinámicamente -->
-            </tbody>
-          </table>
-        </div>
+      <div class="controls">
+        <button class="btn btn-post" id="btnCreate" data-btnCreate>Crear Post (POST)</button>
+        <button class="btn btn-put" id="btnUpdate" disabled data-btnUpdate>Actualizar Post (PUT)</button>
+      </div>
+
+      <div class="formContainer">
+        <form id="taskForm">
+          <input type="text" name="task" placeholder="Nombre de la tarea" class="inputForm" data-input-task required />
+          <input type="date" name="date" class="inputForm" data-input-fecha required />
+          <input type="text" name="description" placeholder="Descripción" class="inputForm" data-input-descripcion required />
+          <input type="text" name="nombre" placeholder="Nombre Asignado" class="inputForm" data-input-nombre required />
+          <input type="number" name="numerico" placeholder="Valor Numerico" class="inputForm" data-input-numerico required />
+        </form>
+      </div>
+
+      <div class="results">
+        <h2>Lista de Tareas</h2>
+        <table id="taskTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Fecha</th>
+              <th>Nombre Asignado</th>
+              <th>Valor Numérico</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody data-tbody>
+
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <script src="js/get.js"></script>
-    <script src="js/post.js"></script>
-    <script src="js/put.js"></script>
-    <script src="js/delete.js"></script>
-    
-    <script>
-        function showResult(data, isError = false) {
-            const statusEl = document.getElementById('status');
-            const resultEl = document.getElementById('result');
-            
-            if (isError) {
-                statusEl.innerHTML = '<div class="status status-error">Error en la operación</div>';
-                resultEl.textContent = typeof data === 'string' ? data : JSON.stringify(data, null, 2);
-            } else {
-                statusEl.innerHTML = '<div class="status status-success">Operación exitosa</div>';
-                resultEl.textContent = JSON.stringify(data, null, 2);
-            }
-        }
-    </script>
-    </main>
+    <script type="module" src="script2.js"></script>
+  </main>
 </body>
 </html>
