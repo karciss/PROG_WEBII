@@ -64,7 +64,7 @@ const cargarTareas = () => {
       });
 
       document.querySelectorAll(".btn-edit").forEach(btn => {
-        btn.addEventListener("click", () => cargarTareaParaEditar(btn.dataset.id));
+        btn.addEventListener("click", () => cargarTareaParaEditar(btn.dataset.id)); //llenar inputs con valores del bd 
       });
 
       document.querySelectorAll(".btn-delete").forEach(btn => {

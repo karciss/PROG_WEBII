@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "nombre": "Cocinarr",
+      "nombre": "Cocinar",
       "descripcion": "Hacer pollo al horno con papas",
       "fecha": "2025-04-10",
       "nombreAsignado": "Carlitos",
@@ -9,12 +9,28 @@
       "id": "7ae1"
     },
     {
-      "nombre": "Pepito",
+      "nombre": "Limpiar",
       "descripcion": "Barrer Gradas",
       "fecha": "2025-04-26",
       "nombreAsignado": "Juanito",
       "valorNumerico": "3",
       "id": "11f0"
+    },
+    {
+      "nombre": "Asear",
+      "descripcion": "Limpiar cocina",
+      "fecha": "2025-05-01",
+      "nombreAsignado": "Anita",
+      "valorNumerico": "7",
+      "id": "7d93"
+    },
+    {
+      "id": "5785",
+      "nombre": "Comprar",
+      "descripcion": "comprar coca cola",
+      "fecha": "2025-04-20",
+      "nombreAsignado": "Marcos",
+      "valorNumerico": "5"
     }
   ]
 }
