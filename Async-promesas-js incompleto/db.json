@@ -1,0 +1,19 @@
+{
+  "perfil": [
+    {
+      "nombre": "fulanito",
+      "email": "fulanito@gmail.com",
+      "id": "1"
+    },
+    {
+      "id": "ea6a30b8-0f74-4ed8-865a-860210dcc6de",
+      "nombre": "admin",
+      "email": "admin@gmail.com"
+    },
+    {
+      "id": "82e9121a-3435-4400-bc5d-65b12fb34392",
+      "nombre": "pepito",
+      "email": "pepito123@gmail.com"
+    }
+  ]
+}

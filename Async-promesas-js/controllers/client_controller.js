@@ -1,51 +1,68 @@
 import {clientService} from "../service/client-service.js"
-const crear_nueva_fila=(nombre,email,id)=>{ 
-    const fila = document.createElement('tr') //creo una nueva fila en la tabla
+const crear_nueva_fila=(nombre,email,id)=>{// recepciono datos 
+    const fila = document.createElement('tr');// creo una nueva filla en la tabla
+    //guardo html en una variable y tambien llamo a mis datos de entrada
     const contenido = `
             <td class="td" data-td>
             ${nombre}
             </td>
             <td>${email}</td>
             <td>
-                <ul class="table__button-control">
-                    <li>
+            <ul class="table__button-control">
+                <li>
                     <a
-                        href="../screens/editar_cliente.html?id=${id}"
-                        class="simple-button simple-button--edit"
-                        >Editar</a
+                    href="../screens/editar_cliente.html?id=${id}"
+                    class="simple-button simple-button--edit"
+                    >Editar</a
                     >
-                    </li>
-                    <li>
+                </li>
+                <li>
                     <button
-                        class="simple-button simple-button--delete"
-                        type="button" id="${id}">
-                        Eliminar
+                    class="simple-button simple-button--delete"
+                    type="button" id="${id}">
+                    Eliminar
                     </button>
-                    </li>
+                </li>
                 </ul>
             </td>
             `;
         fila.innerHTML=contenido;
-        
-        const btn = fila.querySelector("button"); 
-        btn.addEventListener("click", () => { 
-            const id = btn.id;
-            clientService.eliminarCliente(id).then((respuesta) => { //si es promesa .then
-                alert("Ocurrio un error")
-            }).catch((error) => { alert("Ocurrio un error"); 
+        const btn =fila.querySelector("button")
+        btn.addEventListener("click",()=>{
+            const id=btn.id;
+            clientService.eliminarCliente(id).then(respuesta=>{
+                alert("eliminado")
+            }).catch(error=> alert("error"))
 
-            });
+        })
 
-        });
-
-
-        return fila;
+        return fila; 
 };
+// --------- inicial echo en clases ------------
+/*
 const table = document.querySelector("[data-table]");
-clientService.listaclientes().then((data)=>{
-    data.forEach(perfil=>{
-        const nuevafila=crear_nueva_fila(perfil.nombre,perfil.email)
+clientService.listaclientes()
+    .then((data)=>{
+     data.forEach((perfil)=>{ 
+        const nuevafila=crear_nueva_fila(perfil.nombre,perfil.email,perfil.id) // para eliminar y actualizar agregamos id
         table.appendChild(nuevafila)
     });
 }).catch((error)=>alert("error"));
+*/
 
+
+
+// _----------- mejorado codigo ordenado limpio--------------
+const table = document.querySelector("[data-table]");
+clientService
+.listaclientes()
+    .then((data)=>{
+    data.forEach(({nombre,email,id}) => {
+                const nuevaLinea= crear_nueva_fila(nombre,email,id)// llamo a 3 referencias
+                table.appendChild(nuevaLinea)
+                
+                });
+        
+
+    console.log(data);// verifico datos 
+}).catch((error)=>alert("ocurrio un error"));
