@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff - Irrewarra Sourdough</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="staff.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Irrewarra Sourdough</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="clients.html">Clients</a>
+            <a href="staff.html">Staff</a>
+            <a href="products.html">Products</a>
+            <a href="orders.html">Orders</a>
+        </div>
+    </nav>
+
+    <section class="crud-section">
+        <h2>Staff</h2>
+        <a href="#" class="add-btn">Add New Staff</a>
+        <div class="crud-form">
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Role" />
+            <input type="text" placeholder="Contact" />
+            <button>Save Staff</button>
+        </div>
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>Baker</td>
+                    <td>987-654-3210</td>
+                    <td>
+                        <a href="#" class="action-btn">Edit</a>
+                        <a href="#" class="action-btn delete-btn">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

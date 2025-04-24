@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Irrewarra Sourdough</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Irrewarra Sourdough</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="clients.html">Clients</a>
+            <a href="staff.html">Staff</a>
+            <a href="products.html">Products</a>
+            <a href="orders.html">Orders</a>
+        </div>
+    </nav>
+
+    <section class="crud-section">
+        <h2>Products</h2>
+        <a href="#" class="add-btn">Add New Product</a>
+        <div class="crud-form">
+            <input type="text" placeholder="Product Name" />
+            <input type="text" placeholder="Price" />
+            <input type="text" placeholder="Description" />
+            <button>Save Product</button>
+        </div>
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sourdough Loaf</td>
+                    <td>$5.00</td>
+                    <td>Classic sourdough bread</td>
+                    <td>
+                        <a href="#" class="action-btn">Edit</a>
+                        <a href="#" class="action-btn delete-btn">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
