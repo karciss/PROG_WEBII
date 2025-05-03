@@ -1,3 +1,13 @@
+:root {
+    --cream: #F3E9DC;
+    --caramel: #C08552;
+    --brownie: #5E3023;
+    --coffee: #895737;
+    --button-bg: #a36036;
+    --hero-text: #f5d7ce;
+    --coffee-transparent: rgba(137, 87, 55, 0.4);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +16,8 @@
 }
 
 body {
-    background: linear-gradient(135deg, #F3E9DC, #C08552);
-    color: #5E3023;
+    background: linear-gradient(135deg, var(--cream), var(--caramel));
+    color: var(--brownie);
 }
 
 nav {
@@ -15,18 +25,18 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: linear-gradient(90deg, #895737, #5E3023);
+    background: linear-gradient(90deg, var(--coffee), var(--brownie));
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    font-size: 20px;
 }
+
 .logo h1 {
     font-size: 24px;
-    color: #F3E9DC;
+    color: var(--cream);
     margin-left: 25px;
 }
 
@@ -36,7 +46,7 @@ nav {
 }
 
 .nav-links a {
-    color: #F3E9DC;
+    color: var(--cream);
     text-decoration: none;
     font-size: 16px;
     padding: 8px 15px;
@@ -45,47 +55,48 @@ nav {
 }
 
 .nav-links a:hover {
-    background-color: #C08552;
+    background-color: var(--caramel);
 }
 
-.hero {
+.main {
     height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background: url('https://images.pexels.com/photos/31735718/pexels-photo-31735718/free-photo-of-galletas-artesanales-con-rodillo-decorativo.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center/cover;
-    color: #f5d7ce;
+    color: var(--hero-text);
     position: relative;
 }
 
-.hero::before {
+.main::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(137, 87, 55, 0.4); /* Overlay for better text visibility */
+    background: var(--coffee-transparent);
 }
-.hero-content {
+
+.main-content {
     position: relative;
     z-index: 1;
 }
 
-.hero-content h1 {
+.main-content h1 {
     font-size: 78px;
     margin-bottom: 10px;
 }
 
-.hero-content p {
+.main-content p {
     font-size: 20px;
     margin-bottom: 35px;
 }
 
-.hero-content .btn {
-    background: #a36036;
-    color: #F3E9DC;
+.main-content .btn {
+    background: var(--button-bg);
+    color: var(--cream);
     font-weight: bold;
     padding: 15px 25px;
     text-decoration: none;
@@ -93,24 +104,23 @@ nav {
     transition: transform 0.2s;
 }
 
-.hero-content .btn:hover {
+.main-content .btn:hover {
     transform: scale(1.05);
 }
 
-/* Featured Section */
-.featured {
+.best-sellers {
     padding: 50px;
     text-align: center;
-    background: #F3E9DC;
+    background: var(--cream);
 }
 
-.featured h2 {
+.best-sellers h2 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #5E3023;
+    color: var(--brownie);
 }
 
-.featured-products {
+.bestSeller-products {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -120,7 +130,7 @@ nav {
 .product {
     text-align: center;
     background: #fff;
-    border: 1px solid #C08552;
+    border: 1px solid var(--caramel);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -135,16 +145,16 @@ nav {
 
 .product p {
     font-size: 16px;
-    color: #5E3023;
+    color: var(--brownie);
 }
 
 .product:hover {
     transform: scale(1.05);
 }
-/* Footer Styles */
+
 footer {
-    background: linear-gradient(90deg, #895737, #5E3023);
-    color: #F3E9DC;
+    background: linear-gradient(90deg, var(--coffee), var(--brownie));
+    color: var(--cream);
     padding: 40px 50px;
     display: flex;
     justify-content: space-between;
@@ -165,14 +175,14 @@ footer {
 
 .footer-section p, .footer-section a {
     font-size: 14px;
-    color: #F3E9DC;
+    color: var(--cream);
     text-decoration: none;
     margin-bottom: 10px;
     display: block;
 }
 
 .footer-section a:hover {
-    color: #C08552;
+    color: var(--caramel);
 }
 
 .footer-bottom {

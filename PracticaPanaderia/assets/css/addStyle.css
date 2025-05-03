@@ -1,0 +1,31 @@
+.form-section {
+    padding: 50px;
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(229, 224, 216, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.form-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--chocolate);
+    text-align: center;
+}
+
+.crud-form {
+    background: rgba(114, 92, 95, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    color: var(--vanilla);
+    display: block;
+}
+
+#saveBtn{
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+    margin-left: 150px; 
+    margin-top: 5px;
+}

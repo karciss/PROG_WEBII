@@ -1,0 +1,202 @@
+:root {
+    --cream: #F3E9DC;
+    --caramel: #C08552;
+    --brownie: #5E3023;
+    --coffee: #895737;
+    --delete-bg: #421404;
+    --white-transparent-01: rgba(255, 255, 255, 0.1);
+    --white-transparent-02: rgba(255, 255, 255, 0.2);
+    --coffee-transparent-08: rgba(137, 87, 55, 0.8);
+    --coffee-transparent-06: rgba(137, 87, 55, 0.6);
+    --cream-transparent-08: rgba(243, 233, 220, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--cream), var(--caramel));
+    color: var(--brownie);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(90deg, var(--coffee), var(--brownie));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--cream);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: var(--caramel);
+}
+
+.crud-section {
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--white-transparent-01);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.crud-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--brownie);
+    text-align: center;
+}
+
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--coffee-transparent-08);
+    color: var(--cream);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.crud-table th, .crud-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--white-transparent-02);
+}
+
+.crud-table th {
+    background: linear-gradient(90deg, var(--brownie), var(--coffee));
+}
+
+.crud-table .action-btn {
+    background: linear-gradient(90deg, var(--caramel), var(--coffee));
+    color: var(--cream);
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 15px;
+    margin-right: 5px;
+    transition: transform 0.2s;
+}
+
+.crud-table .action-btn:hover {
+    transform: scale(1.05);
+}
+
+.crud-table .delete-btn {
+    background: linear-gradient(90deg, var(--brownie), var(--delete-bg));
+}
+
+.add-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--caramel), var(--coffee));
+    color: var(--cream);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
+}
+
+.crud-form {
+    background: var(--coffee-transparent-06);
+    padding: 20px;
+    border-radius: 15px;
+    color: var(--cream);
+    margin-bottom: 20px;
+    display: none;
+}
+
+.crud-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background: var(--cream-transparent-08);
+    color: var(--brownie);
+}
+
+.crud-form button {
+    background: linear-gradient(90deg, var(--caramel), var(--coffee));
+    color: var(--cream);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.crud-form button:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background: linear-gradient(90deg, var(--coffee), var(--brownie));
+    color: var(--cream);
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {    
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section a {
+    font-size: 14px;
+    color: var(--cream);
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-section a:hover {
+    color: var(--caramel);
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cream-transparent-08);
+    font-size: 14px;
+}

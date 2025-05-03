@@ -29,14 +29,13 @@
       />
       <nav>
         <ul class="header__list-nav">
-          <li class="header__link"><a href="lista_cliente.html">Dashboard</a></li>
-          <li class="header__link"><a href="lista_productos.html">Productos</a></li>
+          <li class="header__link"><a href="#">Dashboard</a></li>
+          <li class="header__link"><a href="./lista_productos.html">Productos</a></li>
           <li class="header__link"><a href="#">Clientes</a></li>
           <li class="header__link"><a href="#">Pets</a></li>
         </ul>
       </nav>
     </header>
-
     <main class="clientes-container">
       <table class="table">
         <thead>
@@ -52,9 +51,7 @@
             </th>
           </tr>
         </thead>
-        <tbody data-table>
-          
-        </tbody>
+        <tbody data-table></tbody>
       </table>
       <div class="modal-container modal--close">
         <article class="modal">
@@ -70,6 +67,7 @@
         </article>
       </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="../controllers/client_controller.js"></script>
   </body>
-  <script type="module" src="../controllers/client_controller.js"></script>
 </html>

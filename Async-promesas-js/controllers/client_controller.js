@@ -1,5 +1,5 @@
-import {clientService} from "../service/client-service.js"
-const crear_nueva_fila=(nombre,email,id)=>{// recepciono datos 
+/*import {clientService} from "../service/client-service.js"*/
+/*const crear_nueva_fila=(nombre,email,id)=>{// recepciono datos 
     const fila = document.createElement('tr');// creo una nueva filla en la tabla
     //guardo html en una variable y tambien llamo a mis datos de entrada
     const contenido = `
@@ -37,7 +37,11 @@ const crear_nueva_fila=(nombre,email,id)=>{// recepciono datos
         })
 
         return fila; 
-};
+};*/
+
+
+
+
 // --------- inicial echo en clases ------------
 /*
 const table = document.querySelector("[data-table]");
@@ -53,7 +57,7 @@ clientService.listaclientes()
 
 
 // _----------- mejorado codigo ordenado limpio--------------
-const table = document.querySelector("[data-table]");
+/*const table = document.querySelector("[data-table]");
 clientService
 .listaclientes()
     .then((data)=>{
@@ -65,4 +69,47 @@ clientService
         
 
     console.log(data);// verifico datos 
-}).catch((error)=>alert("ocurrio un error"));
+}).catch((error)=>alert("ocurrio un error"));*/
+
+
+import { clientService } from "../service/client-service.js";
+
+const crear_nueva_fila = (nombre, email, id) => {
+    const fila = document.createElement('tr');
+    const contenido = `
+        <td class="td" data-td>${nombre}</td>
+        <td>${email}</td>
+        <td>
+            <ul class="table__button-control">
+                <li>
+                    <a href="../screens/editar_cliente.html?id=${id}" class="simple-button simple-button--edit">Editar</a>
+                </li>
+                <li>
+                    <button class="simple-button simple-button--delete" type="button" id="${id}">Eliminar</button>
+                </li>
+            </ul>
+        </td>
+    `;
+    fila.innerHTML = contenido;
+    const btn = fila.querySelector("button");
+    btn.addEventListener("click", () => {
+        clientService.eliminarCliente(id)
+            .then(() => {
+                alert("Cliente eliminado");
+                fila.remove();
+            })
+            .catch(error => alert("Error al eliminar el cliente"));
+    });
+    return fila;
+};
+
+const table = document.querySelector("[data-table]");
+
+clientService.lista_clientes()
+    .then(data => {
+        data.forEach(({ nombre, email, id }) => {
+            const nuevaFila = crear_nueva_fila(nombre, email, id);
+            table.appendChild(nuevaFila);
+        });
+    })
+    .catch(error => alert("Ocurrió un error al cargar los clientes"));
