@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doguito Petshop | Registrar cliente</title>
+    <title>Doguito Petshop | Actualizar Pet</title>
     <link rel="icon" href="../assets/img/doguitoadm.svg" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../assets/css/register_client.css" />
     <link rel="stylesheet" href="../assets/css/componentes/inputs.css" />
     <link rel="stylesheet" href="../assets/css/componentes/button.css" />
+    <link rel="stylesheet" href="../assets/css/register_pet.css" />
   </head>
   <body>
     <header class="header container">
@@ -29,16 +30,16 @@
       />
       <nav>
         <ul class="header__list-nav">
-          <li class="header__link"><a href="#">Dashboard</a></li>
-          <li class="header__link"><a href="./lista_productos.html">Productos</a></li>
-          <li class="header__link"><a href="./lista_cliente.html">Clientes</a></li>
-          <li class="header__link"><a href="./lista_pets.html">Pets</a></li>
+            <li class="header__link"><a href="#">Dashboard</a></li>
+            <li class="header__link"><a href="./lista_productos.html">Productos</a></li>
+            <li class="header__link"><a href="./lista_cliente.html">Clientes</a></li>
+            <li class="header__link"><a href="./lista_pets.html">Pets</a></li>
         </ul>
       </nav>
     </header>
     <main class="container flex flex--center flex--column">
       <section class="card cadastro">
-        <h1 class="card__title">Registrar Cliente</h1>
+        <h1 class="card__title">Editar Pet</h1>
         <form data-form class="flex flex--column">
           <div class="input-container">
             <input
@@ -55,22 +56,34 @@
           </div>
           <div class="input-container">
             <input
-              name="email"
-              id="email"
+              name="raza"
+              id="raza"
               class="input"
-              type="email"
-              placeholder="Email"
+              type="text"
+              placeholder="Raza"
               required
-              data-email
+              data-raza
             />
-            <label class="input-label" for="email">Email</label>
+            <label class="input-label" for="raza">Raza</label>
             <span class="input-menssage-error">Este campo es requerido</span>
           </div>
-          <button type="submit" class="button">Registrar cliente</button>
+          <div class="input-container">
+            <input
+              name="edad"
+              id="edad"
+              class="input"
+              type="number"
+              placeholder="Edad"
+              required
+              data-edad
+            />
+            <label class="input-label" for="edad">Edad</label>
+            <span class="input-menssage-error">Este campo es requerido</span>
+          </div>
+          <button type="submit" class="button">Editar pet</button>
         </form>
       </section>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="../controllers/registro_controller.js"></script>
+    <script type="module" src="../controllers/actualizar_pet_controller.js"></script>
   </body>
 </html>

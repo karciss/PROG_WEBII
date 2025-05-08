@@ -9,12 +9,10 @@ if (!id) {
     window.location.href = "../screens/lista_productos.html";
 }
 
-// Obtener los elementos del formulario
 const nombreInput = document.querySelector("[data-nombre]");
 const precioInput = document.querySelector("[data-precio]");
 const descripcionInput = document.querySelector("[data-descripcion]");
 
-// Rellenar el formulario con los datos del producto
 productService.producto(id)
     .then(producto => {
         if (!producto) {
@@ -32,7 +30,6 @@ productService.producto(id)
         window.location.href = "../screens/lista_productos.html";
     });
 
-// Manejar el envío del formulario
 const formulario = document.querySelector("[data-form]");
 formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
