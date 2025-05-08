@@ -43,7 +43,7 @@ formulario.addEventListener("submit", (evento) => {
     productService
         .actualizarProducto(nombre, precio, descripcion, id)
         .then(() => {
-            window.location.href = "../screens/lista_productos.html";
+            window.location.href = "../screens/edicion_concluida_producto.html";
         })
         .catch((error) => {
             console.error("Error al actualizar el producto:", error);

@@ -11,7 +11,7 @@ formulario.addEventListener("submit", (evento) => {
     productService
         .crearProducto(nombre, precio, descripcion)
         .then(() => {
-            window.location.href = "../screens/registro_completado.html";
+            window.location.href = "../screens/registro_completado_producto.html";
         })
         .catch((error) => {
             console.error(error);
