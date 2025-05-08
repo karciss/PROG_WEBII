@@ -1,48 +1,52 @@
 import { productService } from "../service/product-service.js";
 
-const obtenerInfo = async () => {
-    const url = new URL(window.location);
-    const id = url.searchParams.get("id");
-    if (!id) {
-        window.location.href = "../screens/error_producto.html";
-    }
-    const nombre = document.querySelector("[data-nombre]");
-    const precio = document.querySelector("[data-precio]");
-    const descripcion = document.querySelector("[data-descripcion]");
+// Obtener el ID del producto desde la URL
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
 
-    try {
-        const producto = await productService.obtenerProducto(id);
-        if (producto.nombre && producto.precio && producto.descripcion) {
-            nombre.value = producto.nombre;
-            precio.value = producto.precio;
-            descripcion.value = producto.descripcion;
-        } else {
-            throw new Error();
+if (!id) {
+    alert("No se proporcionó un ID de producto");
+    window.location.href = "../screens/lista_productos.html";
+}
+
+// Obtener los elementos del formulario
+const nombreInput = document.querySelector("[data-nombre]");
+const precioInput = document.querySelector("[data-precio]");
+const descripcionInput = document.querySelector("[data-descripcion]");
+
+// Rellenar el formulario con los datos del producto
+productService.producto(id)
+    .then(producto => {
+        if (!producto) {
+            alert("Producto no encontrado");
+            window.location.href = "../screens/lista_productos.html";
+            return;
         }
-    } catch (error) {
-        console.log("Error:", error);
-        window.location.href = "../screens/error_producto.html";
-    }
-};
+        nombreInput.value = producto.nombre;
+        precioInput.value = producto.precio;
+        descripcionInput.value = producto.descripcion || "";
+    })
+    .catch(error => {
+        console.error("Error al cargar el producto:", error);
+        alert("Error al cargar el producto");
+        window.location.href = "../screens/lista_productos.html";
+    });
 
-obtenerInfo();
-
+// Manejar el envío del formulario
 const formulario = document.querySelector("[data-form]");
 formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
-    const url = new URL(window.location);
-    const id = url.searchParams.get("id");
-    const nombre = document.querySelector("[data-nombre]").value;
-    const precio = document.querySelector("[data-precio]").value;
-    const descripcion = document.querySelector("[data-descripcion]").value;
+    const nombre = nombreInput.value;
+    const precio = parseFloat(precioInput.value);
+    const descripcion = descripcionInput.value;
 
     productService
         .actualizarProducto(nombre, precio, descripcion, id)
         .then(() => {
-            window.location.href = "../screens/edicion_concluida_producto.html";
+            window.location.href = "../screens/lista_productos.html";
         })
         .catch((error) => {
-            console.log(error);
-            window.location.href = "../screens/error_producto.html";
+            console.error("Error al actualizar el producto:", error);
+            window.location.href = "../screens/error.html";
         });
 });

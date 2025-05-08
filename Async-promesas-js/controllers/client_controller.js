@@ -112,4 +112,4 @@ clientService.lista_clientes()
             table.appendChild(nuevaFila);
         });
     })
-    .catch(error => alert("Ocurrió un error al cargar los clientes"));
+    .catch(error => alert("Ocurrio un error al cargar los clientes"));
