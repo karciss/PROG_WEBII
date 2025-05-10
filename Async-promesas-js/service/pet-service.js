@@ -18,13 +18,13 @@ const lista_pets = () => {
         });
 };
 
-const crearPet = (nombre, raza, edad) => {
+const crearPet = (nombre, raza, edad, cliente_id) => {
     return fetch(API_BASE_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ nombre, raza, edad, id: generarId() })
+        body: JSON.stringify({ nombre, raza, edad, cliente_id, id: generarId() })
     }).then(response => {
         if (!response.ok) {
             throw new Error(`Error al crear el pet: ${response.status} ${response.statusText}`);
@@ -64,13 +64,13 @@ const pet = (id) => {
         });
 };
 
-const actualizarPet = (nombre, raza, edad, id) => { 
+const actualizarPet = (nombre, raza, edad, cliente_id, id) => { 
     return fetch(API_BASE_URL, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ nombre, raza, edad, id })
+        body: JSON.stringify({ nombre, raza, edad, cliente_id, id })
     }).then(respuesta => {
         if (!respuesta.ok) {
             throw new Error(`Error al actualizar el pet: ${respuesta.status} ${respuesta.statusText}`);

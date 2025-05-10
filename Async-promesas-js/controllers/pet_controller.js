@@ -1,11 +1,12 @@
 import { petService } from "../service/pet-service.js";
 
-const crear_nueva_fila = (nombre, raza, edad, id) => {
+const crear_nueva_fila = (nombre, raza, edad, cliente_nombre, id) => {
     const fila = document.createElement('tr');
     const contenido = `
         <td class="td" data-td>${nombre}</td>
         <td>${raza}</td>
         <td>${edad}</td>
+        <td>${cliente_nombre || 'Sin dueño'}</td>
         <td>
             <ul class="table__button-control">
                 <li>
@@ -34,8 +35,8 @@ const table = document.querySelector("[data-table]");
 
 petService.lista_pets()
     .then(data => {
-        data.forEach(({ nombre, raza, edad, id }) => {
-            const nuevaFila = crear_nueva_fila(nombre, raza, edad, id);
+        data.forEach(({ nombre, raza, edad, cliente_nombre, id }) => {
+            const nuevaFila = crear_nueva_fila(nombre, raza, edad, cliente_nombre, id);
             table.appendChild(nuevaFila);
         });
     })
