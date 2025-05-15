@@ -40,7 +40,9 @@
 
 
 
-     function generarId() {
+    //  CONEXION XAMPP
+
+    /* function generarId() {
         return Date.now().toString(36) + Math.random().toString(36).substring(2);
     }
     
@@ -134,4 +136,107 @@
         eliminarProducto,
         producto,
         actualizarProducto
+    };*/
+
+
+    // CONEXION SUPABASE
+
+function generarId() {
+    return Date.now().toString(36) + Math.random().toString(36).substring(2);
+}
+
+const SUPABASE_URL = 'https://qixdcadprrreesrtoaky.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFpeGRjYWRwcnJyZWVzcnRvYWt5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY4NzY5MDIsImV4cCI6MjA2MjQ1MjkwMn0.5MUi_Oi-VwvrtrwVqzFbzUmjJEi2D8mvIZNxZmkKfa4';
+const TABLE = 'productos';
+const API_URL = `${SUPABASE_URL}/rest/v1/${TABLE}`;
+const HEADERS = {
+    'apikey': SUPABASE_KEY,
+    'Authorization': `Bearer ${SUPABASE_KEY}`,
+    'Content-Type': 'application/json',
+    'Prefer': 'return=representation'
+};
+
+const lista_productos = () => {
+    return fetch(`${API_URL}?select=*`,
+        { headers: HEADERS })
+        .then(res => {
+            if (!res.ok) throw new Error('error en listar productos');
+            return res.json();
+        });
+};
+
+const crearProducto = (nombre, precio, descripcion) => {
+    const producto = {
+        nombre,
+        descripcion,
+        precio: parseFloat(precio),
+        id: generarId()
     };
+    return fetch(API_URL, {
+        method: 'POST',
+        headers: HEADERS,
+        body: JSON.stringify(producto)
+    }).then(async (res) => {
+        if (!res.ok) {
+            const text = await res.text();
+            throw new Error(text || 'Error al crear el producto');
+        }
+        const text = await res.text();
+        return text ? JSON.parse(text) : producto;
+    }).catch(err => {
+        console.error(err || 'Error al crear el producto');
+        throw err;
+    });
+};
+
+const eliminarProducto = (id) => {
+    return fetch(`${API_URL}?id=eq.${id}`, {
+        method: 'DELETE',
+        headers: HEADERS
+    }).then(res => {
+        if (!res.ok) throw new Error('Error al eliminar producto');
+        return res;
+    }).catch((error) => {
+        console.error('Error al eliminar producto', error);
+        throw error;
+    });
+};
+
+const producto = (id) => {
+    return fetch(`${API_URL}?id=eq.${id}`,
+        { headers: HEADERS })
+        .then(res => {
+            if (!res.ok) throw new Error('Error al obtener producto');
+            return res.json();
+        })
+        .then(data => Array.isArray(data) && data.length > 0 ? data[0] : null);
+};
+
+const actualizarProducto = (nombre, precio, descripcion, id) => {
+    return fetch(`${API_URL}?id=eq.${id}` , {
+        method: 'PATCH',
+        headers: HEADERS,
+        body: JSON.stringify({ nombre, descripcion, precio: parseFloat(precio) })
+    }).then(async (res) => {
+        if (!res.ok) {
+            const text = await res.text();
+            throw new Error(text || 'Error al actualizar el producto');
+        }
+        const data = await res.json();
+        if (!data || data.length === 0) {
+            throw new Error('No se encontró el producto para actualizar');
+        }
+        return data[0];
+    }).catch(err => {
+        console.error(err || 'Error al actualizar el producto');
+        throw err;
+    });
+};
+
+export const productService = {
+    lista_productos,
+    crearProducto,
+    eliminarProducto,
+    producto,
+    actualizarProducto
+};
