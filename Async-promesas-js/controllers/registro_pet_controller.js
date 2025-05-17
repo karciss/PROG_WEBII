@@ -9,8 +9,8 @@ clientService.lista_clientes()
         console.log("Clientes cargados desde Supabase:", clientes); 
         clientes.forEach(cliente => {
             const option = document.createElement("option");
-            option.value = cliente.id; 
-            option.textContent = cliente.nombre + (cliente.email ? ` (${cliente.email})` : "");
+            option.value = cliente.id;
+            option.textContent = cliente.nombre;
             clienteSelect.appendChild(option);
         });
     })
@@ -38,20 +38,14 @@ formulario.addEventListener("submit", (evento) => {
         return;
     }
 
-    if (!clienteId) {
+    if (!clienteId || clienteId === "") {
         alert("Debes seleccionar un dueño");
         return;
     }
 
-    const clienteIdNum = Number(clienteId);
-    if (isNaN(clienteIdNum)) {
-        alert("El ID del cliente no es un número válido");
-        return;
-    }
+    console.log("Cliente ID seleccionado (como string):", clienteId);
 
-    console.log("Cliente ID seleccionado (como número):", clienteIdNum);
-
-    petService.crearPet(nombre, raza, edad, clienteIdNum)
+    petService.crearPet(nombre, raza, edad, clienteId)
         .then(() => {
             window.location.href = "../screens/registro_completo_pet.html";
         })

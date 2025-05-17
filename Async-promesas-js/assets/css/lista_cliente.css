@@ -7,7 +7,18 @@
 	padding-left: 1rem;
 
 }
+.search-container {
+    margin-bottom: 20px;
+    text-align: right;
+}
 
+.search-input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
 @media(min-width: 1200px) {
 	.clientes-container {
 		padding-left: calc((100vw - 900px)/2);

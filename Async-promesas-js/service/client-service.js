@@ -178,7 +178,7 @@ export const clientService = {
 };*/
 
 // SUPABASE CORREGIDO
-function generarId() {
+/*function generarId() {
     return Date.now().toString(36) + Math.random().toString(36).substring(2);
 }
 const SUPABASE_URL = 'https://qixdcadprrreesrtoaky.supabase.co';
@@ -278,6 +278,132 @@ const actualizarCliente = (nombre, email, id) => {
 
 export const clientService = {
     lista_clientes,
+    crearCliente,
+    eliminarCliente,
+    clientes,
+    actualizarCliente
+};*/
+
+
+// SUPABASE CON BUSQUEDA
+function generarId() {
+    return Date.now().toString(36) + Math.random().toString(36).substring(2);
+}
+
+const SUPABASE_URL = 'https://qixdcadprrreesrtoaky.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFpeGRjYWRwcnJyZWVzcnRvYWt5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY4NzY5MDIsImV4cCI6MjA2MjQ1MjkwMn0.5MUi_Oi-VwvrtrwVqzFbzUmjJEi2D8mvIZNxZmkKfa4';
+const TABLE = 'perfil';
+const API_URL = `${SUPABASE_URL}/rest/v1/${TABLE}`;
+const HEADERS = {
+    'apikey': SUPABASE_KEY,
+    'Authorization': `Bearer ${SUPABASE_KEY}`,
+    'Content-Type': 'application/json',
+    'Prefer': 'return=representation'
+};
+
+const lista_clientes = () => {
+    return fetch(`${API_URL}?select=*`, { headers: HEADERS })
+        .then(res => {
+            if (!res.ok) throw new Error('error en listar clientes');
+            return res.json();
+        });
+};
+
+// buscar clientes por nombre
+const buscarClientesPorNombre = (nombre) => {
+    // Usamos ilike para coincidencias parciales, *nombre* busca en cualquier parte del texto
+    const query = nombre ? `nombre=ilike.*${encodeURIComponent(nombre)}*` : '';
+    const url = `${API_URL}?select=*${query ? `&${query}` : ''}`;
+    return fetch(url, { headers: HEADERS })
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Error al buscar clientes');
+            }
+            return res.json();
+        })
+        .catch(err => {
+            console.error('Error al buscar clientes:', err);
+            throw err;
+        });
+};
+
+const crearCliente = (nombre, email) => {
+    const cliente = {
+        nombre,
+        email,
+        id: generarId()
+    };
+    return fetch(API_URL, {
+        method: 'POST',
+        headers: HEADERS,
+        body: JSON.stringify(cliente)
+    }).then(async (res) => {
+        if (!res.ok) {
+            const text = await res.text();
+            throw new Error(text || 'Error al crear el cliente');
+        }
+        const text = await res.text();
+        return text ? JSON.parse(text) : cliente;
+    }).catch(err => {
+        console.error(err || 'Error al crear el cliente');
+        throw err;
+    });
+};
+
+const eliminarCliente = (id) => {
+    return fetch(`${API_URL}?id=eq.${id}`, {
+        method: 'DELETE',
+        headers: HEADERS
+    }).then(res => {
+        if (!res.ok) throw new Error('Error al eliminar cliente');
+        return res;
+    }).catch((error) => {
+        console.error('Error al eliminar cliente', error);
+        throw error;
+    });
+};
+
+const clientes = (id) => {
+    return fetch(`${API_URL}?id=eq.${id}`, { headers: HEADERS })
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('error en listar clientes');
+            }
+            return res.json();
+        });
+};
+
+const actualizarCliente = (nombre, email, id) => {
+    if (!id || !nombre || !email) {
+        throw new Error('ID, nombre y email son requeridos');
+    }
+    console.log(`Actualizando cliente con ID: ${id}, Nombre: ${nombre}, Email: ${email}`);
+    return fetch(`${API_URL}?id=eq.${id}`, {
+        method: 'PATCH',
+        headers: HEADERS,
+        body: JSON.stringify({ nombre, email })
+    })
+    .then(async res => {
+        if (!res.ok) {
+            const text = await res.text();
+            console.error('Respuesta de error:', text);
+            throw new Error(text || 'Error al actualizar el cliente');
+        }
+        const data = await res.json();
+        if (!data || (Array.isArray(data) && data.length === 0)) {
+            throw new Error('No se encontró el cliente para actualizar o no se devolvieron datos');
+        }
+        return Array.isArray(data) ? data[0] : data;
+    })
+    .catch(err => {
+        console.error('Error al actualizar el cliente:', err);
+        throw err;
+    });
+};
+
+export const clientService = {
+    lista_clientes,
+    buscarClientesPorNombre, 
     crearCliente,
     eliminarCliente,
     clientes,

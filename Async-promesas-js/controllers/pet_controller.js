@@ -1,6 +1,9 @@
 import { petService } from "../service/pet-service.js";
 import { clientService } from "../service/client-service.js";
 
+const table = document.querySelector("[data-table]");
+const searchInput = document.querySelector("[searchInput]");
+
 const crear_nueva_fila = (nombre, raza, edad, cliente_id, id) => {
     const fila = document.createElement('tr');
     const contenido = `
@@ -43,13 +46,30 @@ const crear_nueva_fila = (nombre, raza, edad, cliente_id, id) => {
     return fila;
 };
 
-const table = document.querySelector("[data-table]");
+const actualizarTabla = (pets) =>{
+    //limpiar
+    while (table.firstChild){
+        table.removeChild(table.firstChild);
+    }
+
+    pets.forEach(({ nombre, raza, edad, cliente_id, id }) => {
+        const nuevaFila = crear_nueva_fila(nombre, raza, edad, cliente_id, id);
+        table.appendChild(nuevaFila);
+    });
+};
 
 petService.lista_pets()
     .then(data => {
-        data.forEach(({ nombre, raza, edad, cliente_id, id }) => {
-            const nuevaFila = crear_nueva_fila(nombre, raza, edad, cliente_id, id);
-            table.appendChild(nuevaFila);
+        actualizarTabla(data);
+        searchInput.addEventListener("input", () => {
+            const searchTerm = searchInput.value.trim();
+            petService.buscarPetsPorNombre(searchTerm)
+                .then(pets => {
+                    actualizarTabla(pets);
+                })
+                .catch(error => {
+                    console.error("Error al buscar pets:", error);
+                });
         });
     })
-    .catch(error => alert("Ocurrió un error al cargar los pets"));
+    .catch(error => alert("Error al cargar los pets:", error));

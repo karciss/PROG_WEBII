@@ -165,6 +165,31 @@ const lista_productos = () => {
         });
 };
 
+const buscarProductosPorNombre = (nombre) =>{
+    // consulta para buscar productos por nombre completo
+    /*return fetch(`${API_URL}?select=*&nombre=eq.${nombre}`,
+        { headers: HEADERS })
+        .then(res => {
+            if (!res.ok) throw new Error('error en listar productos');
+            return res.json();
+        });*/
+
+
+    const query = nombre ? `nombre=ilike.*${encodeURIComponent(nombre)}*` : '';
+    const url = `${API_URL}?select=*${query ? `&${query}` : ''}`;
+    return fetch (url, { headers: HEADERS })
+    .then(res => {
+        if(!res.ok){
+            throw new Error('Error al buscar productos');
+        }
+        return res.json();
+    })
+    .catch(error => {
+        console.error('Error al buscar productos:', error);
+        throw error;
+    })
+};
+
 const crearProducto = (nombre, precio, descripcion) => {
     const producto = {
         nombre,
@@ -235,6 +260,7 @@ const actualizarProducto = (nombre, precio, descripcion, id) => {
 
 export const productService = {
     lista_productos,
+    buscarProductosPorNombre,
     crearProducto,
     eliminarProducto,
     producto,

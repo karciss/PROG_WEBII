@@ -1,5 +1,8 @@
 import { productService } from "../service/product-service.js";
 
+const table = document.querySelector("[data-table]");
+const searchInput = document.querySelector("[searchInput]");
+
 const crear_nueva_fila = (nombre, precio, descripcion, id) => {
     const fila = document.createElement('tr');
     const contenido = `
@@ -30,20 +33,34 @@ const crear_nueva_fila = (nombre, precio, descripcion, id) => {
     return fila;
 };
 
-const table = document.querySelector("[data-table]");
+const actualizarTabla = (productos) =>{
+    //limpiar
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
+    productos.forEach(({nombre,precio,descripcion,id})=>{
+        const nuevaFila = crear_nueva_fila(nombre,precio,descripcion,id);
+        table.appendChild(nuevaFila);
+    });
+};
 
 productService.lista_productos()
-    .then(data => {
-        if (!Array.isArray(data)) {
-            throw new Error("La respuesta de la API no es un array válido");
-        }
-        console.log("Productos recibidos:", data); // Verificar los datos recibidos
-        data.forEach(({ nombre, precio, descripcion, id }) => {
-            const nuevaFila = crear_nueva_fila(nombre, precio, descripcion, id);
-            table.appendChild(nuevaFila);
+    .then(data =>{
+        actualizarTabla(data);
+        
+        searchInput.addEventListener("input", () =>{
+            const searchItem = searchInput.value.trim();
+            productService.buscarProductosPorNombre(searchItem)
+            .then(productos =>{
+                actualizarTabla(productos);
+            })
+            .catch(error =>{
+                console.error("Error al buscar productos:", error);
+                alert("error al buscar clinetes");
+            });
         });
     })
-    .catch(error => {
-        console.error("Error al cargar los productos:", error);
-        alert("Ocurrió un error al cargar los productos");
-    });
+    .catch(error => alert("Ocurrio un error al cargar los productos"));
+
+
+    

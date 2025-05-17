@@ -117,6 +117,22 @@ const lista_pets = () => {
         });
 };
 
+const buscarPetsPorNombre = (nombre) =>{
+    const query = nombre ? `nombre=ilike.*${encodeURIComponent(nombre)}*` : '';
+    const url = `${API_URL}?select=*${query ? `&${query}` : ''}`;
+    return fetch(url, { headers: HEADERS })
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Error al buscar clientes');
+            }
+            return res.json();
+        })
+        .catch(err => {
+            console.error('Error al buscar clientes:', err);
+            throw err;
+        });
+};
+
 const crearPet = (nombre, raza, edad, cliente_id) => {
     if (!nombre || typeof nombre !== 'string') {
         throw new Error('El nombre es requerido y debe ser una cadena');
@@ -211,6 +227,7 @@ const actualizarPet = (nombre, raza, edad, cliente_id, id) => {
 
 export const petService = {
     lista_pets,
+    buscarPetsPorNombre,
     crearPet,
     eliminarPet,
     pet,
