@@ -310,7 +310,6 @@ const lista_clientes = () => {
 };
 
 const buscarClientes = (termino) => {
-    // Si no hay término de busqueda, devolver todos los clientes
     if (!termino) {
         return lista_clientes();
     }

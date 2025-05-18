@@ -18,6 +18,21 @@ const lista_pets = () => {
         });
 };
 
+const buscarPets = (termino) => {
+    const url = `${API_BASE_URL}?search=${encodeURIComponent(termino)}`;
+    return fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Error al buscar pets');
+            }
+            return response.json();
+        })
+        .catch((error) => {
+            console.error('Error al buscar pets:', error);
+            throw error;
+        });
+}
+
 const crearPet = (nombre, raza, edad, cliente_id) => {
     return fetch(API_BASE_URL, {
         method: 'POST',
@@ -84,6 +99,7 @@ const actualizarPet = (nombre, raza, edad, cliente_id, id) => {
 
 export const petService = {
     lista_pets,
+    buscarPets,
     crearPet,
     eliminarPet,
     pet,

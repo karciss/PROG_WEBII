@@ -18,6 +18,21 @@ const lista_clientes = () => {
         });
 };
 
+const buscarClientes = (termino) => {
+    const url = `${API_BASE_URL}?search=${encodeURIComponent(termino)}`;
+    return fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Error al buscar clientes');
+            }
+            return response.json();
+        })
+        .catch((error) => {
+            console.error('Error al buscar clientes:', error);
+            throw error;
+        });
+};
+
 const crearCliente = (nombre, email) => {
     return fetch(API_BASE_URL, {
         method: 'POST',
@@ -68,6 +83,7 @@ const actualizarCliente = (nombre, email, id) => {
 
 export const clientService = {
     lista_clientes,
+    buscarClientes, 
     crearCliente,
     eliminarCliente,
     clientes,

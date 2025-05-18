@@ -22,6 +22,21 @@
                 throw error;
             });
     };
+
+    const buscarProductos = (termino) => {
+        const url = `${API_BASE_URL}?search=${encodeURIComponent(termino)}`;
+        return fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Error al buscar productos');
+            }
+            return response.json();
+        })
+        .catch((error) => {
+            console.error('Error al buscar productos:', error);
+            throw error;
+        });
+    }
     
     const crearProducto = (nombre, precio, descripcion) => {
         return fetch(API_BASE_URL, {
@@ -89,6 +104,7 @@
     
     export const productService = {
         lista_productos,
+        buscarProductos,
         crearProducto,
         eliminarProducto,
         producto,
