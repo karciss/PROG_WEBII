@@ -309,11 +309,14 @@ const lista_clientes = () => {
         });
 };
 
-// buscar clientes por nombre
-const buscarClientesPorNombre = (nombre) => {
-    // Usamos ilike para coincidencias parciales, *nombre* busca en cualquier parte del texto
-    const query = nombre ? `nombre=ilike.*${encodeURIComponent(nombre)}*` : '';
-    const url = `${API_URL}?select=*${query ? `&${query}` : ''}`;
+const buscarClientes = (termino) => {
+    // Si no hay término de busqueda, devolver todos los clientes
+    if (!termino) {
+        return lista_clientes();
+    }
+    // Usamos or para buscar en nombre o email
+    const query = `or=(nombre.ilike.*${encodeURIComponent(termino)}*,email.ilike.*${encodeURIComponent(termino)}*)`;
+    const url = `${API_URL}?select=*&${query}`;
     return fetch(url, { headers: HEADERS })
         .then(res => {
             if (!res.ok) {
@@ -403,7 +406,7 @@ const actualizarCliente = (nombre, email, id) => {
 
 export const clientService = {
     lista_clientes,
-    buscarClientesPorNombre, 
+    buscarClientes, 
     crearCliente,
     eliminarCliente,
     clientes,

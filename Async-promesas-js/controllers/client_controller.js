@@ -62,7 +62,7 @@ clientService.lista_clientes()
 import { clientService } from "../service/client-service.js";
 
 const table = document.querySelector("[data-table]");
-const searchInput = document.querySelector("[searchInput]");
+const searchInput = document.querySelector("#searchInput");
 
 const crear_nueva_fila = (nombre, email, id) => {
     const fila = document.createElement('tr');
@@ -93,28 +93,25 @@ const crear_nueva_fila = (nombre, email, id) => {
     return fila;
 };
 
-//aacrualiza dato buscado en la tabla
 const actualizarTabla = (clientes) => {
     // limpiar
     while (table.firstChild) {
         table.removeChild(table.firstChild);
     }
-
     clientes.forEach(({ nombre, email, id }) => {
         const nuevaFila = crear_nueva_fila(nombre, email, id);
         table.appendChild(nuevaFila);
     });
 };
 
-// Cargar todos los clientes inicialmente
+// carga todos los clientes inicialmente
 clientService.lista_clientes()
     .then(data => {
         actualizarTabla(data);
 
-        // Agregar evento de búsqueda
         searchInput.addEventListener("input", () => {
             const searchTerm = searchInput.value.trim();
-            clientService.buscarClientesPorNombre(searchTerm)
+            clientService.buscarClientes(searchTerm)
                 .then(clientes => {
                     actualizarTabla(clientes);
                 })
