@@ -71,7 +71,7 @@ formulario.addEventListener("submit", (evento) => {
     petService
         .actualizarPet(nombre, raza, edad, clienteId, id)
         .then(() => {
-            window.location.href = "../screens/registro_completo_pet.html";
+            window.location.href = "../screens/edicion_concluida_pets.html";
         })
         .catch((error) => {
             console.error("Error al actualizar el pet:", error);
