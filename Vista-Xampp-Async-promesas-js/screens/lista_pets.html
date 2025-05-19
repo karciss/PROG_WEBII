@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doguito Petshop | Comparación de Vistas</title>
+    <link rel="stylesheet" href="../assets/css/base/base.css">
+    <link rel="stylesheet" href="../assets/css/componentes/header.css">
+    <link rel="stylesheet" href="../assets/css/lista_cliente.css">
+    <link rel="stylesheet" href="../assets/css/componentes/table.css">
+    <link rel="stylesheet" href="../assets/css/componentes/button.css">
+    <link rel="stylesheet" href="../assets/css/componentes/modal.css">
+    <style>
+        .table-container { margin-bottom: 20px; }
+        .table-container h2 { font-size: 1.5em; margin-left:25px; font-weight: 300; }
+    </style>
+</head>
+<body>
+    <header class="header container">
+        <img src="../assets/img/doguitoadm.svg" alt="Logotipo Doguito" class="header__logo">
+        <nav>
+            <ul class="header__list-nav">
+                <li class="header__link"><a href="#">Dashboard</a></li>
+                <li class="header__link"><a href="./lista_productos.html">Productos</a></li>
+                <li class="header__link"><a href="./lista_cliente.html">Clientes</a></li>
+                <li class="header__link"><a href="./lista_pets.html">Pets</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="pets-container">
+        <!-- Tabla con Vista -->
+        <div class="table-container">
+            <h2>Pets con Vista</h2>
+            <div class="search-container">
+                <input type="text" 
+                       id="searchInputWithView" 
+                       class="search-input" 
+                       placeholder="Buscar por nombre de mascota o dueño...">
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="table__column--p">Nombre</th>
+                        <th class="table__column--p">Raza</th>
+                        <th class="table__column--p">Edad</th>
+                        <th class="table__column--g">Dueño</th>
+                        <th class="table__column--g">Email Dueño</th>
+                        <th class="table__column--m table__align--right">
+                            <a href="./registrar_pet.php" class="simple-button simple-button--add">Nuevo Pet</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody data-table-with-view></tbody>
+            </table>
+        </div>
+
+        <!-- Tabla sin Vista -->
+        <div class="table-container">
+            <h2>Pets sin Vista (JOIN)</h2>
+            <div class="search-container">
+                <input type="text" 
+                       id="searchInputWithoutView" 
+                       class="search-input" 
+                       placeholder="Buscar por nombre de mascota o dueño...">
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="table__column--p">Nombre</th>
+                        <th class="table__column--p">Raza</th>
+                        <th class="table__column--p">Edad</th>
+                        <th class="table__column--g">Dueño</th>
+                        <th class="table__column--g">Email Dueño</th>
+                        <th class="table__column--m table__align--right"></th>
+                    </tr>
+                </thead>
+                <tbody data-table-without-view></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="../controllers/pet_controller.js"></script>
+</body>
+</html>
