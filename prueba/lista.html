@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes y Productos</title>
+    <!-- Incluir Bootstrap CSS desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <h1 class="text-center mb-4">Gestión de Clientes y Productos</h1>
+
+        <!-- Sección de Clientes -->
+        <h2>Clientes</h2>
+        <table class="table table-striped table-bordered mb-5">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-clientes">
+                <!-- Datos de ejemplo (puedes llenarlo con JavaScript desde la API) -->
+                <tr>
+                    <td>1</td>
+                    <td>Juan Pérez</td>
+                    <td>juan@example.com</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Sección de Productos -->
+        <h2>Productos</h2>
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-productos">
+                <!-- Datos de ejemplo -->
+                <tr>
+                    <td>1</td>
+                    <td>Collar para Perro</td>
+                    <td>$15.00</td>
+                    <td>Collar ajustable rojo</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Incluir Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para conectar con tu API -->
+    <script>
+        // Ejemplo de cómo llenar las tablas con datos de la API
+        async function cargarClientes() {
+            const response = await fetch('http://localhost/api1/conexion_server.php');
+            const clientes = await response.json();
+            const tabla = document.getElementById('tabla-clientes');
+            tabla.innerHTML = '';
+            clientes.forEach(cliente => {
+                tabla.innerHTML += `
+                    <tr>
+                        <td>${cliente.id}</td>
+                        <td>${cliente.nombre}</td>
+                        <td>${cliente.email}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Editar</button>
+                            <button class="btn btn-danger btn-sm">Eliminar</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+        // Llama a la función al cargar la página
+        // cargarClientes();
+    </script>
+</body>
+</html>

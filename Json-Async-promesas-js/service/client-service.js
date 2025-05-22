@@ -67,6 +67,7 @@ lista_clientes()
 
 //---------optimizado---------
 const listaclientes=()=> fetch("http://localhost:3000/perfil").then((respuesta)=>respuesta.json());
+
 const crearCliente=(nombre,email)=>{
     return fetch ("http://localhost:3000/perfil",{
         method:"POST",
@@ -77,6 +78,7 @@ const crearCliente=(nombre,email)=>{
     });
 
 };
+
 const eliminarCliente=(id)=>{
     console.log("elii",id)
     return fetch(`http://localhost:3000/perfil/${id}`,{
