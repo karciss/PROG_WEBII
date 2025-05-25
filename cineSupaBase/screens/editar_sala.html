@@ -39,57 +39,41 @@
     </header>
     <main class="container flex flex--center flex--column">
       <section class="card cadastro">
-        <h1 class="card__title">Actualizar Pelicula</h1>
+        <h1 class="card__title">Actualizar Sala</h1>
         <form data-form class="flex flex--column">
           <div class="input-container">
             <input
-              name="nombre"
-              id="nombre"
+              name="nro_sala"
+              id="nro_sala"
               class="input"
               type="text"
-              placeholder="Nombre"
+              placeholder="Nro Sala"
               required
-              data-nombre
+              data-nro_sala
             />
-            <label class="input-label" for="nombre">Nombre</label>
+            <label class="input-label" for="nro_sala">Nro Sala</label>
             <span class="input-menssage-error">Este campo es requerido</span>
           </div>
 
           <div class="input-container">
             <input
-              name="genero"
-              id="genero"
-              class="input"
-              type="text"
-              placeholder="Género"
-              required
-              data-genero
-            />
-            <label class="input-label" for="genero">Género</label>
-            <span class="input-menssage-error">Este campo es requerido</span>
-          </div>
-
-          <div class="input-container">
-            <input
-              name="duracion"
-              id="duracion"
+              name="capacidad"
+              id="capacidad"
               class="input"
               type="number"
-              placeholder="Duración"
+              placeholder="Capacidad"
               required
-              data-duracion
+              data-capacidad
             />
-            <label class="input-label" for="duracion">Duración</label>
+            <label class="input-label" for="capacidad">Capacidad</label>
             <span class="input-menssage-error">Este campo es requerido</span>
           </div>
 
-            
-
-          <button type="submit" class="button">Actualizar Pelicula</button>
+          <button type="submit" class="button">Actualizar Sala</button>
         </form>
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="../controllers/actualizar_pelicula_controller.js"></script>  
+    <script type="module" src="../controllers/actualizar_sala_controller.js"></script>  
   </body>
 </html>

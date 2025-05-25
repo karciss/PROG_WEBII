@@ -28,7 +28,7 @@ formulario.addEventListener("submit", (evento) => {
         })
         .catch((error) => {
             console.error("Error al registrar el cliente:", error);
-            alert("Error al registrar el cliente: " + error.message);
+            alert("Error al registrar la pelicula: " + error.message);
             window.location.href = "../screens/error.html";
         });
 });

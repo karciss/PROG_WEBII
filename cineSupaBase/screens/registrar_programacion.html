@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cine | Actualizar Pelicula</title>
+    <title>Cine | Registrar PRogramacion</title>
     <link rel="icon" href="../assets/img/LogoCine.png" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
@@ -39,57 +39,62 @@
     </header>
     <main class="container flex flex--center flex--column">
       <section class="card cadastro">
-        <h1 class="card__title">Actualizar Pelicula</h1>
+        <h1 class="card__title">Registrar Programación</h1>
         <form data-form class="flex flex--column">
           <div class="input-container">
             <input
-              name="nombre"
-              id="nombre"
+              name="fecha"
+              id="fecha"
               class="input"
-              type="text"
-              placeholder="Nombre"
+              type="date"
+              placeholder="Fecha"
               required
-              data-nombre
+              data-fecha
             />
-            <label class="input-label" for="nombre">Nombre</label>
+            <label class="input-label" for="fecha">Fecha</label>
             <span class="input-menssage-error">Este campo es requerido</span>
           </div>
-
           <div class="input-container">
             <input
-              name="genero"
-              id="genero"
+              name="hora_inicio"
+              id="hora_inicio"
               class="input"
-              type="text"
-              placeholder="Género"
+              type="time"
+              placeholder="Hora de inicio"
               required
-              data-genero
+              data-hora-inicio
             />
-            <label class="input-label" for="genero">Género</label>
+            <label class="input-label" for="hora_inicio">Hora de inicio</label>
             <span class="input-menssage-error">Este campo es requerido</span>
           </div>
-
           <div class="input-container">
             <input
-              name="duracion"
-              id="duracion"
+              name="hora_fin"
+              id="hora_fin"
               class="input"
-              type="number"
-              placeholder="Duración"
+              type="time"
+              placeholder="Hora de fin"
               required
-              data-duracion
+              data-hora-fin
             />
-            <label class="input-label" for="duracion">Duración</label>
+            <label class="input-label" for="hora_fin">Hora de fin</label>
             <span class="input-menssage-error">Este campo es requerido</span>
           </div>
-
-            
-
-          <button type="submit" class="button">Actualizar Pelicula</button>
+          <div class="input-container">
+            <select name="id_pelicula" id="id_pelicula" class="input" required data-id-pelicula></select>
+            <label class="input-label" for="id_pelicula">Película</label>
+            <span class="input-menssage-error">Este campo es requerido</span>
+          </div>
+          <div class="input-container">
+            <select name="id_sala" id="id_sala" class="input" required data-id-sala></select>
+            <label class="input-label" for="id_sala">Sala</label>
+            <span class="input-menssage-error">Este campo es requerido</span>
+          </div>
+          <button type="submit" class="button">Registrar programación</button>
         </form>
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="../controllers/actualizar_pelicula_controller.js"></script>  
+    <script type="module" src="../controllers/registro_programacion_controller.js"></script>
   </body>
 </html>

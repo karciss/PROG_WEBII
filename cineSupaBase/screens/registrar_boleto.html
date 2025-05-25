@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cine | Actualizar Pelicula</title>
+    <title>Cine | Registrar Boleto</title>
     <link rel="icon" href="../assets/img/LogoCine.png" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
@@ -39,57 +39,55 @@
     </header>
     <main class="container flex flex--center flex--column">
       <section class="card cadastro">
-        <h1 class="card__title">Actualizar Pelicula</h1>
+        <h1 class="card__title">Registrar Boleto</h1>
         <form data-form class="flex flex--column">
           <div class="input-container">
             <input
-              name="nombre"
-              id="nombre"
+              name="nro_asiento"
+              id="nro_asiento"
               class="input"
               type="text"
-              placeholder="Nombre"
+              placeholder="Número de Asiento"
               required
-              data-nombre
+              data-nro_asiento
             />
-            <label class="input-label" for="nombre">Nombre</label>
+            <label class="input-label" for="nro_asiento">Número de Asiento</label>
             <span class="input-menssage-error">Este campo es requerido</span>
           </div>
 
           <div class="input-container">
-            <input
-              name="genero"
-              id="genero"
+            <select
+              name="programacion"
+              id="programacion"
               class="input"
-              type="text"
-              placeholder="Género"
               required
-              data-genero
-            />
-            <label class="input-label" for="genero">Género</label>
+              data-programacion
+            >
+              <option value="" disabled selected>Seleccione una programación</option>
+            </select>
+            <label class="input-label" for="programacion">Programación</label>
             <span class="input-menssage-error">Este campo es requerido</span>
           </div>
 
           <div class="input-container">
-            <input
-              name="duracion"
-              id="duracion"
+            <select
+              name="cliente"
+              id="cliente"
               class="input"
-              type="number"
-              placeholder="Duración"
               required
-              data-duracion
-            />
-            <label class="input-label" for="duracion">Duración</label>
+              data-cliente
+            >
+              <option value="" disabled selected>Seleccione un cliente</option>
+            </select>
+            <label class="input-label" for="cliente">Cliente</label>
             <span class="input-menssage-error">Este campo es requerido</span>
           </div>
 
-            
-
-          <button type="submit" class="button">Actualizar Pelicula</button>
+          <button type="submit" class="button">Registrar Boleto</button>
         </form>
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="../controllers/actualizar_pelicula_controller.js"></script>  
+    <script type="module" src="../controllers/registro_boleto_controllery.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cine | Peliculas</title>
+    <title>Cine | Boletos</title>
     <link rel="icon" href="../assets/img/LogoCine.png" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
@@ -15,10 +15,10 @@
     />
     <link rel="stylesheet" href="../assets/css/base/base.css" />
     <link rel="stylesheet" href="../assets/css/componentes/header.css" />
-    <link rel="stylesheet" href="../assets/css/lista_cliente.css" />
-    <link rel="stylesheet" href="../assets/css/componentes/table.css" />
+    <link rel="stylesheet" href="../assets/css/lista_cliente.css" />    <link rel="stylesheet" href="../assets/css/componentes/table.css" />
     <link rel="stylesheet" href="../assets/css/componentes/button.css" />
     <link rel="stylesheet" href="../assets/css/componentes/modal.css" />
+    <link rel="stylesheet" href="../assets/css/lista_programacion.css" />
   </head>
   <body>
     <header class="header container">
@@ -33,41 +33,32 @@
           <li class="header__link"><a href="./lista_cliente.html">Clientes</a></li>
           <li class="header__link"><a href="./lista_programacion.html">Programaciones</a></li>
           <li class="header__link"><a href="./lista_boleto.html">Boleto</a></li>
-          <li class="header__link"><a href="./lista_sala.html">Sala</a></li>
+          <li class="header__link"><a href="./lista_sala.html">Salas</a></li>
 
         </ul>
       </nav>
     </header>
     <main class="clientes-container">
-      <div class="search-container">
-        <input
-          type="text"
-          id="searchInput"
-          class="search-input"
-          placeholder="Buscar..."
-          searchInput
-        />
-      </div>
+      
       <table class="table">
         <thead>
-          <tr>
-            <th class="table__column--p">Nombre</th>
-            <th class="table__column--g">Genero</th>
-            <th class="table__column--g">Duracion</th>
-            <th class="table__column--m table__align--right">
+          <tr>            <th class="table__column--p" style="width: 15%;">Nro Asiento</th>
+            <th class="table__column--p" style="width: 15%;">ID Programacion</th>
+            <th class="table__column--p" style="width: 15%;">Nombre Cliente</th>
+            
+            <th class="table__column--m table__align--right" style="width: 20%;">
               <a
-                href="./registrar_pelicula.html"
+                href="./registrar_boleto.html"
                 class="simple-button simple-button--add"
-                >Nueva Pelicula</a
+                >Nuevo Boleto</a
               >
             </th>
           </tr>
         </thead>
         <tbody data-table></tbody>
       </table>
-      
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="../controllers/movie_controller.js"></script>
+    <script type="module" src="../controllers/boleto_controller.js"></script>
   </body>
 </html>

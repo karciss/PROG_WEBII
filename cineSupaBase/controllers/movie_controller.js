@@ -13,7 +13,7 @@ const crear_nueva_fila = (nombre, genero,duracion, id) => {
         <td>
             <ul class="table__button-control">
                 <li>
-                    <a href="../screens/editar_cliente.html?id=${id}" class="simple-button simple-button--edit">Editar</a>
+                    <a href="../screens/editar_pelicula.html?id=${id}" class="simple-button simple-button--edit">Editar</a>
                 </li>
                 <li>
                     <button class="simple-button simple-button--delete" type="button" data-id="${id}">Eliminar</button>
@@ -43,14 +43,15 @@ const cargarDatosIniciales = () => {
         .catch(error => alert("Error al cargar las peliculas: " + error.message));
 };
 
-const eliminarCliente = (id, fila) => {
-    if (!confirm("¿Seguro que deseas eliminar esta pelicula?")) return;
+
+const eliminarPelicula = (id, fila) => {
+    if (!confirm("¿Seguro que deseas eliminar esta película?")) return;
     movieService.eliminarPelicula(id)
         .then(() => {
-            alert("Pelicula eliminado");
+            alert("Película eliminada");
             fila.remove();
         })
-        .catch(error => alert("Error al eliminar la pelicula: " + error.message));
+        .catch(error => alert("Error al eliminar la película: " + error.message));
 };
 
 // buscador

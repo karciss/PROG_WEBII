@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cine | Peliculas</title>
+    <title>Cine | Salas</title>
     <link rel="icon" href="../assets/img/LogoCine.png" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
@@ -33,7 +33,7 @@
           <li class="header__link"><a href="./lista_cliente.html">Clientes</a></li>
           <li class="header__link"><a href="./lista_programacion.html">Programaciones</a></li>
           <li class="header__link"><a href="./lista_boleto.html">Boleto</a></li>
-          <li class="header__link"><a href="./lista_sala.html">Sala</a></li>
+          <li class="header__link"><a href="./lista_sala.html">Salas</a></li>
 
         </ul>
       </nav>
@@ -51,14 +51,14 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="table__column--p">Nombre</th>
-            <th class="table__column--g">Genero</th>
-            <th class="table__column--g">Duracion</th>
+            <th class="table__column--p">Nro Sala</th>
+            <th class="table__column--g">Capacidad</th>
+            
             <th class="table__column--m table__align--right">
               <a
-                href="./registrar_pelicula.html"
+                href="./registrar_sala.html"
                 class="simple-button simple-button--add"
-                >Nueva Pelicula</a
+                >Nueva Sala</a
               >
             </th>
           </tr>
@@ -68,6 +68,6 @@
       
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="../controllers/movie_controller.js"></script>
+    <script type="module" src="../controllers/sala_controller.js"></script>
   </body>
 </html>
