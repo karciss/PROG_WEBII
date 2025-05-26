@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cine | Actualizar Boleto</title>
+    <link rel="icon" href="../assets/img/LogoCine.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/base/base.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/header.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/card.css" />
+    <link rel="stylesheet" href="../assets/css/register_client.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/inputs.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/button.css" />
+  </head>
+  <body>
+    <header class="header container">
+      <img
+        src="../assets/img/LogoCine.png"
+        alt="Logo Cine"
+        class="header__logo"
+      />
+      <nav>
+        <ul class="header__list-nav">
+          <li class="header__link"><a href="./lista_pelicula.html">Peliculas</a></li>
+          <li class="header__link"><a href="./lista_cliente.html">Clientes</a></li>
+          <li class="header__link"><a href="./lista_programacion.html">Programaciones</a></li>
+          <li class="header__link"><a href="./lista_boleto.html">Boleto</a></li>
+          <li class="header__link"><a href="./lista_sala.html">Sala</a></li>
+        </ul>
+      </nav>
+    </header>    <main class="container flex flex--center flex--column">
+      <section class="card cadastro">
+        <h1 class="card__title">Actualizar Boleto</h1>
+        <form data-form class="flex flex--column">
+          <div class="input-container">
+            <input
+              name="nro_asiento"
+              id="nro_asiento"
+              class="input"
+              type="number"
+              placeholder="Número de Asiento"
+              required
+              data-nro_asiento
+            />
+            <label class="input-label" for="nro_asiento">Número de Asiento</label>
+            <span class="input-menssage-error">Este campo es requerido y debe ser un número mayor a 0</span>
+          </div>
+
+          <div class="input-container">
+            <select
+              name="programacion"
+              id="programacion"
+              class="input"
+              required
+              data-programacion
+            >
+              <option value="">Seleccione una programación</option>
+            </select>
+            <label class="input-label" for="programacion">Programación</label>
+            <span class="input-menssage-error">Debe seleccionar una programación</span>
+          </div>
+
+          <div class="input-container">
+            <select
+              name="cliente"
+              id="cliente"
+              class="input"
+              required
+              data-cliente
+            >
+              <option value="">Seleccione un cliente</option>
+            </select>
+            <label class="input-label" for="cliente">Cliente</label>
+            <span class="input-menssage-error">Debe seleccionar un cliente</span>
+          </div>
+
+          <button type="submit" class="button">Actualizar Boleto</button>
+        </form>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="../controllers/actualizar_boleto_controller.js"></script>  
+  </body>
+</html>

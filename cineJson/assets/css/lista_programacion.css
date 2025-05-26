@@ -1,0 +1,23 @@
+.table {
+    width: 100%;
+    border-spacing: 8px;
+    border-collapse: separate;
+}
+
+.table td {
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+.table thead th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+}
+
+/* Ajuste para el botón de acciones */
+.table__align--right {
+    text-align: right !important;
+    padding-right: 20px !important;
+}

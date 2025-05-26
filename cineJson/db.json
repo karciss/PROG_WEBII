@@ -1,0 +1,85 @@
+{
+  "pelicula": [
+    {
+      "nombre": "Mujercitas",
+      "genero": "Drama",
+      "duracion": 121,
+      "id": "1"
+    },
+    {
+      "id": "f948e779-979c-439d-835a-57f02189058e",
+      "nombre": "Whiplash",
+      "genero": "Drama",
+      "duracion": 204
+    }
+  ],
+  "sala": [
+    {
+      "id": "1",
+      "nro_sala": "505A",
+      "capacidad": 100
+    },
+    {
+      "nro_sala": "502C",
+      "capacidad": 55,
+      "id": "b8e8867a-0618-4f8f-b7eb-d9161eca9f2d"
+    }
+  ],
+  "cliente": [
+    {
+      "id": "1",
+      "nombre": "Pepito",
+      "apellido": "Perez",
+      "edad": 25,
+      "telefono": "123456789"
+    },
+    {
+      "nombre": "Pablito",
+      "apellido": "Mendez",
+      "edad": 51,
+      "telefono": "5649879",
+      "id": "4369ba4b-5064-4525-8da8-ac98e5f1cfc4"
+    }
+  ],
+  "programacion": [
+    {
+      "id": "1",
+      "fecha": "2025-05-25",
+      "hora_inicio": "14:00",
+      "hora_fin": "16:00",
+      "id_pelicula": "1",
+      "id_sala": "1"
+    },
+    {
+      "id": "6744fb49-45fb-4e15-91b3-07e1a55281d7",
+      "fecha": "2025-05-31",
+      "hora_inicio": "01:14",
+      "hora_fin": "02:14",
+      "id_pelicula": "f948e779-979c-439d-835a-57f02189058e",
+      "id_sala": "b8e8867a-0618-4f8f-b7eb-d9161eca9f2d"
+    }
+  ],
+  "boleto": [
+    {
+      "id": "1",
+      "nro_asiento": 15,
+      "id_programacion": "1",
+      "id_cliente": "1"
+    },
+    {
+      "nro_asiento": 11,
+      "id_programacion": "1",
+      "id_cliente": "4369ba4b-5064-4525-8da8-ac98e5f1cfc4",
+      "id": "1b1326fa-3a3a-4700-9300-0a9f0b4d2d6c"
+    },
+    {
+      "id": "c4c4cd60-eb64-4694-a074-4958bb8897c2",
+      "nro_asiento": 25,
+      "id_programacion": "6744fb49-45fb-4e15-91b3-07e1a55281d7",
+      "id_cliente": "4369ba4b-5064-4525-8da8-ac98e5f1cfc4"
+    }
+  ]
+}
+
+
+

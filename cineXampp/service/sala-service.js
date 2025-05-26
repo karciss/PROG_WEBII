@@ -9,7 +9,7 @@ const DEFAULT_HEADERS = {
     'Accept': 'application/json'
 };
 
-const listar_salas = () => {
+const lista_salas = () => {
     return fetch(API_BASE_URL)
         .then((response) => {
             if (!response.ok) {
@@ -97,7 +97,7 @@ const actualizarSala = (nro_sala, capacidad, id) => {
 };
 
 export const salaService = {
-    listar_salas,
+    lista_salas,
     buscarSala,
     crearSala,
     eliminarSala,

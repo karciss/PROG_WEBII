@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cine | Programaciones</title>
+    <link rel="icon" href="../assets/img/LogoCine.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/base/base.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/header.css" />
+    <link rel="stylesheet" href="../assets/css/lista_cliente.css" />    <link rel="stylesheet" href="../assets/css/componentes/table.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/button.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/modal.css" />
+    <link rel="stylesheet" href="../assets/css/lista_programacion.css" />
+  </head>
+  <body>
+    <header class="header container">
+      <img
+        src="../assets/img/LogoCine.png"
+        alt="Logotipo Cine"
+        class="header__logo"
+      />
+      <nav>
+        <ul class="header__list-nav">
+          <li class="header__link"><a href="./lista_pelicula.html">Peliculas</a></li>
+          <li class="header__link"><a href="./lista_cliente.html">Clientes</a></li>
+          <li class="header__link"><a href="./lista_programacion.html">Programaciones</a></li>
+          <li class="header__link"><a href="./lista_boleto.html">Boleto</a></li>
+          <li class="header__link"><a href="./lista_sala.html">Salas</a></li>
+
+        </ul>
+      </nav>
+    </header>
+    <main class="clientes-container">
+      
+      <table class="table">
+        <thead>
+          <tr>            <th class="table__column--p" style="width: 15%;">Fecha</th>
+            <th class="table__column--p" style="width: 15%;">Hora Inicio</th>
+            <th class="table__column--p" style="width: 15%;">Hora Fin</th>
+            <th class="table__column--p" style="width: 20%;">Película</th>
+            <th class="table__column--p" style="width: 15%;">Sala</th>
+            <th class="table__column--m table__align--right" style="width: 20%;">
+              <a
+                href="./registrar_programacion.html"
+                class="simple-button simple-button--add"
+                >Nueva Programación</a
+              >
+            </th>
+          </tr>
+        </thead>
+        <tbody data-table></tbody>
+      </table>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="../controllers/programacion_controller.js"></script>
+  </body>
+</html>
