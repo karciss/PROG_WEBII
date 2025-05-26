@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Programación</title>
+    <link rel="icon" href="../assets/img/LogoCine.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/base/base.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/header.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/card.css" />
+    <link rel="stylesheet" href="../assets/css/register_client.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/inputs.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/button.css" />
+  </head>
+  <body>
+    <header class="header container">
+      <img src="../assets/img/LogoCine.png" alt="Logotipo Cine" class="header__logo" />
+      <nav>
+        <ul class="header__list-nav">
+          <li class="header__link"><a href="./lista_pelicula.html">Peliculas</a></li>
+          <li class="header__link"><a href="./lista_cliente.html">Clientes</a></li>
+          <li class="header__link"><a href="./lista_programacion.html">Programaciones</a></li>
+          <li class="header__link"><a href="./lista_boleto.html">Boleto</a></li>
+          <li class="header__link"><a href="./lista_sala.html">Salas</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container flex flex--center flex--column">
+      <section class="card cadastro">
+        <h1 class="card__title">Editar Programación</h1>
+        <form id="formEditarProgramacion" class="flex flex--column">
+          <div class="input-container">
+            <input
+              name="fecha"
+              id="fecha"
+              class="input"
+              type="date"
+              placeholder="Fecha"
+              required
+              data-fecha
+            />
+            <label class="input-label" for="fecha">Fecha</label>
+            <span class="input-menssage-error">Este campo es requerido</span>
+          </div>
+          <div class="input-container">
+            <input
+              name="hora_inicio"
+              id="hora_inicio"
+              class="input"
+              type="time"
+              placeholder="Hora de inicio"
+              required
+              data-hora-inicio
+            />
+            <label class="input-label" for="hora_inicio">Hora de inicio</label>
+            <span class="input-menssage-error">Este campo es requerido</span>
+          </div>
+          <div class="input-container">
+            <input
+              name="hora_fin"
+              id="hora_fin"
+              class="input"
+              type="time"
+              placeholder="Hora de fin"
+              required
+              data-hora-fin
+            />
+            <label class="input-label" for="hora_fin">Hora de fin</label>
+            <span class="input-menssage-error">Este campo es requerido</span>
+          </div>
+          <div class="input-container">
+            <select name="id_pelicula" id="id_pelicula" class="input" required data-id-pelicula></select>
+            <label class="input-label" for="id_pelicula">Película</label>
+            <span class="input-menssage-error">Este campo es requerido</span>
+          </div>
+          <div class="input-container">
+            <select name="id_sala" id="id_sala" class="input" required data-id-sala></select>
+            <label class="input-label" for="id_sala">Sala</label>
+            <span class="input-menssage-error">Este campo es requerido</span>
+          </div>
+          <button type="submit" class="button">Actualizar programación</button>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="../controllers/actualizar_programacion_controller.js"></script>
+  </body>
+</html>

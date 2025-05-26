@@ -2,9 +2,14 @@ function generarId() {
     return Date.now().toString(36) + Math.random().toString(36).substring(2);
 }
 
-const API_BASE_URL = 'http://localhost/api1/conexion1.php';
+const API_BASE_URL = 'http://localhost/api1/sala.php';
 
-const lista_clientes = () => {
+const DEFAULT_HEADERS = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+};
+
+const listar_salas = () => {
     return fetch(API_BASE_URL)
         .then((response) => {
             if (!response.ok) {
@@ -18,61 +23,71 @@ const lista_clientes = () => {
         });
 };
 
-const buscarClientes = (termino) => {
+const buscarSala = (termino) => {
     const url = `${API_BASE_URL}?search=${encodeURIComponent(termino)}`;
     return fetch(url)
         .then((response) => {
             if (!response.ok) {
-                throw new Error('Error al buscar clientes');
+                throw new Error('Error al buscar sala');
             }
             return response.json();
         })
         .catch((error) => {
-            console.error('Error al buscar clientes:', error);
+            console.error('Error al buscar sala:', error);
             throw error;
         });
 };
 
-const crearCliente = (nombre, email) => {
+const crearSala = (nro_sala, capacidad) => {
     return fetch(API_BASE_URL, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ nombre, email, id: generarId() })
-    }).then(response => {
+        headers: DEFAULT_HEADERS,
+        body: JSON.stringify({ 
+            nro_sala, 
+            capacidad: parseInt(capacidad),
+            id: generarId() 
+        })
+    }).then(async response => {
         if (!response.ok) {
-            throw new Error('Error al crear el cliente');
+            const error = await response.text();
+            throw new Error(error || 'Error al crear la sala');
         }
         return response.json();
+    }).catch(error => {
+        console.error('Error al crear la sala:', error);
+        throw error;
     });
 };
 
-const eliminarCliente = (id) => {
+const eliminarSala = (id) => {
     return fetch(`${API_BASE_URL}?id=${id}`, {
         method: 'DELETE'
     }).then(response => {
         if (!response.ok) {
-            throw new Error('Error al eliminar el cliente');
+            throw new Error('Error al eliminar la sala');
         }
         return response.json();
     });
 };
 
-const clientes = (id) => {
+const salas = (id) => {
     return fetch(`${API_BASE_URL}?id=${id}`).then((respuesta) => respuesta.json());
 };
 
-const actualizarCliente = (nombre, email, id) => { 
+const actualizarSala = (nro_sala, capacidad, id) => { 
     return fetch(API_BASE_URL, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ nombre, email, id })
+        body: JSON.stringify({ 
+            nro_sala, 
+            capacidad: parseInt(capacidad), 
+            id
+        })
     }).then(respuesta => {
         if (!respuesta.ok) {
-            throw new Error('Error al actualizar el cliente');
+            throw new Error('Error al actualizar la sala');
         }
         return respuesta.json();
     }).catch(err => {
@@ -81,11 +96,11 @@ const actualizarCliente = (nombre, email, id) => {
     });
 };
 
-export const clientService = {
-    lista_clientes,
-    buscarClientes, 
-    crearCliente,
-    eliminarCliente,
-    clientes,
-    actualizarCliente
+export const salaService = {
+    listar_salas,
+    buscarSala,
+    crearSala,
+    eliminarSala,
+    salas,
+    actualizarSala
 };
