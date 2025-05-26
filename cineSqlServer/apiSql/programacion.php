@@ -13,7 +13,7 @@ $serverName = '(localdb)\\carolina';
 $database = 'cinebd';
 
 try {
-    $conn = new PDO("sqlsrv:server=$serverName;Database=$database;Encrypt=yes;TrustServerCertificate=yes", null, null);
+    $conn = new PDO("sqlsrv:server=$serverName;Database=$database;Encrypt=no;TrustServerCertificate=yes", null, null);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     http_response_code(500);

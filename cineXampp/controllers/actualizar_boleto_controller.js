@@ -109,7 +109,7 @@ form.addEventListener("submit", async (evento) => {
 
     try {
         await boletoService.actualizarBoleto(nro_asiento, id_programacion, id_cliente, id);
-        window.location.href = "../screens/edicion_concluida.html";
+        window.location.href = "../screens/edicion_concluida_boleto.html";
     } catch (error) {
         console.error("Error al actualizar el boleto:", error);
         alert("Error al actualizar el boleto: " + error.message);

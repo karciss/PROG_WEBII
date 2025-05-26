@@ -63,7 +63,7 @@ formulario.addEventListener("submit", (evento) => {
 
     boletoService.crearBoleto(nro_asiento, id_programacion, id_cliente)
         .then(() => {
-            window.location.href = "../screens/registro_completado.html";
+            window.location.href = "../screens/registro_completado_boleto.html";
         })
         .catch((error) => {
             console.error("Error al registrar el boleto:", error);

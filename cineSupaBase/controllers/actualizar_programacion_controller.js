@@ -117,7 +117,7 @@ form.addEventListener("submit", async (e) => {
       id_sala,
       id
     );
-    window.location.href = "./lista_programacion.html";
+    window.location.href = "./edicion_concluida_programacion.html";
   } catch (err) {
     alert("Error al actualizar programación");
   }

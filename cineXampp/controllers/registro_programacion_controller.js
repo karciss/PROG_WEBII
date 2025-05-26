@@ -66,7 +66,7 @@ formulario.addEventListener("submit", (evento) => {
 
     programacionService.crearProgramacion(fecha, hora_inicio, hora_fin, id_pelicula, id_sala)
         .then(() => {
-            window.location.href = "../screens/registro_completado.html";
+            window.location.href = "../screens/registro_completado_programacion.html";
         })
         .catch((error) => {
             console.error("Error al registrar la programación:", error);

@@ -57,6 +57,14 @@
       "hora_fin": "02:14",
       "id_pelicula": "f948e779-979c-439d-835a-57f02189058e",
       "id_sala": "b8e8867a-0618-4f8f-b7eb-d9161eca9f2d"
+    },
+    {
+      "fecha": "2025-06-22",
+      "hora_inicio": "15:43",
+      "hora_fin": "16:45",
+      "id_pelicula": "1",
+      "id_sala": "1",
+      "id": "1abf4268-159e-49c0-b863-39bada940d01"
     }
   ],
   "boleto": [
@@ -77,9 +85,12 @@
       "nro_asiento": 25,
       "id_programacion": "6744fb49-45fb-4e15-91b3-07e1a55281d7",
       "id_cliente": "4369ba4b-5064-4525-8da8-ac98e5f1cfc4"
+    },
+    {
+      "nro_asiento": 12,
+      "id_programacion": "1abf4268-159e-49c0-b863-39bada940d01",
+      "id_cliente": "1",
+      "id": "0fc9164c-9450-4f2d-a375-417d4bc4f519"
     }
   ]
 }
-
-
-
