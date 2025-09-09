@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Battery Monitor App</string>
+    <string name="battery_level">Battery Level: %d%%</string>
+    <string name="charging_status_connected">Charging: Connected</string>
+    <string name="charging_status_disconnected">Charging: Disconnected</string>
+    <string name="low_battery_warning">Low Battery Warning!</string>
+    <string name="video_playback">Video Playback</string>
+    <string name="wifi_connected">WiFi Connected - Video Available</string>
+    <string name="wifi_disconnected">WiFi Disconnected - Video Unavailable</string>
+    <string name="connect_wifi_message">Please connect to WiFi to play videos</string>
+    <string name="video_controls">Video Controls</string>
+</resources>
